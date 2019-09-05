@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/images/shouye.png",
+      "selectedIconPath": "/images/sshouye.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页2",
+      "iconPath": "/images/shouye.png",
+      "selectedIconPath": "/images/sshouye.png"
+    }]
+  
+  },
+  "sitemapLocation": "sitemap.json"
+}
