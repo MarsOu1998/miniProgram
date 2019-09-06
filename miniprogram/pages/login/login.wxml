@@ -2,7 +2,7 @@
 <view class="title">登录</view>
 <view class="input"><input placeholder="请输入账号" bindinput="inputUserName"/></view>
 <view class="border1"></view>
-<input class="input" placeholder="请输入密码" bindinput="inputPassword"></input>
+<input class="input" placeholder="请输入密码" bindinput="inputPassword" password="true"></input>
 <button class="button" type="primary" bindtap="login">登录</button>
 <view class="register" bindtap="register">没有账号？点此注册</view>
 </view>

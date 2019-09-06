@@ -1,10 +1,10 @@
 <view>
 <view class="title">注册</view>
-<input class="input" placeholder="请输入账号" ></input>
+<input class="input" placeholder="请输入账号" bindinput="inputUserName"></input>
 <view class="border1"></view>
-<input class="input" placeholder="请输入密码" ></input>
+<input bindinput="inputPassword" class="input" placeholder="请输入密码" password="true"></input>
 <view class="border1"></view>
-<input class="input" placeholder="请再次输入密码"></input>
-<button class="button" type="primary" >注册</button>
+<input  bindinput="inputPasswordAgain" class="input" placeholder="请再次输入密码" password="true"></input>
+<button class="button" type="primary" bindtap="register">注册</button>
 <view class="login" bindtap="login">点此返回登录</view>
 </view>
