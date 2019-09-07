@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/register/register",
+  
     "pages/index/index",
-    "pages/mine/mine"
+    "pages/search/search",
+    "pages/mine/mine",
+    "pages/indexDetail/indexDetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -20,11 +21,17 @@
       "selectedIconPath": "/images/sshouye.png"
     },
     {
-      "pagePath": "pages/index/index",
-      "text": "首页2",
-      "iconPath": "/images/shouye.png",
-      "selectedIconPath": "/images/sshouye.png"
-    }]
+      "pagePath": "pages/search/search",
+      "text": "搜索",
+      "iconPath": "/images/sousuo.png",
+      "selectedIconPath": "/images/ssousuo.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "/images/wode.png",
+      "selectedIconPath": "/images/swode.png"
+    }
+      ]
   
   },
   "sitemapLocation": "sitemap.json"
