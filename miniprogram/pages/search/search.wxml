@@ -1,2 +1,38 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="searchArea">
+
+<input class="input" placeholder="搜索兼职" />
+<view class="sousuo">搜索</view>
+</view>
+
+<text class="hot">热门搜索</text>
+
+<view class="wholeHot">
+
+<view class="student"> 
+<text>学生</text>
+</view>
+
+<view class="student"> 
+<text>假期</text>
+</view>
+
+<view class="student"> 
+<text>日结</text>
+</view>
+
+</view>
+<view class="wholeHot">
+
+<view class="student"> 
+<text>保洁阿姨</text>
+</view>
+
+<view class="student"> 
+<text>临时工</text>
+</view>
+
+<view class="student"> 
+<text>服务员</text>
+</view>
+
+</view>
