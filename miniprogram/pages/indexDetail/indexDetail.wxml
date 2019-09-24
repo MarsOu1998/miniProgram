@@ -1,2 +1,3 @@
-<!--pages/indexDetail/indexDetail.wxml-->
-<text>pages/indexDetail/indexDetail.wxml</text>
+<view class="bg1">
+123
+</view>

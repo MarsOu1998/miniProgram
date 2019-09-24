@@ -1,1 +1,8 @@
-/* pages/indexDetail/indexDetail.wxss */
+page{
+  background: url('https://7061-part-time-job-yw301-1259707559.tcb.qcloud.la/bg1.jpg?sign=41eb131e0a2af8114e41492328c73cc3&t=1569121526');
+background-size:cover;
+}
+
+.bg1{
+  background-color:grey; 
+}
