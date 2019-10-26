@@ -1,0 +1,86 @@
+/* pages/mine/mine.wxss */
+
+ 
+/* 头像个签部分 */
+.head{
+  display: flex;
+  background-color: white;
+  padding-left: 30rpx;
+}
+/* 用户名个签部分 */
+.head2{
+  margin-left: 50rpx;
+}
+
+/* 用户名 */
+.head2Name{
+ padding-top: 40rpx;
+}
+/* 个性签名 */
+.head2Sign{
+  margin-top: 30rpx;
+  color: grey;
+}
+/* 进入图标 */
+.jinru{
+ display:flex;
+ align-items:center;
+
+}
+
+/* 设置圆角头像 */
+.touxiang image{
+  border-radius: 50%;
+  height: 220rpx;
+  width: 220rpx;
+}
+/* 设置进入图标 */
+.jinru image{
+  height: 50rpx;
+  width: 50rpx;
+  padding-left: 200rpx;
+}
+
+/* 报名信息部分 */
+.content{
+  margin-top: 20rpx;
+  background-color: white;
+  padding-left: 30rpx;
+  font-weight: bold;
+  height: 280rpx;
+}
+.content image{
+  height: 60rpx;
+  width: 60rpx;
+  margin-left:20rpx 
+  
+}
+.report4{
+  padding:0 30rpx 0 10rpx;
+  display: flex;
+  margin-top: 70rpx;
+  justify-content: space-between;
+}
+
+.tail{
+  background-color: white;
+  margin-top: 30rpx;
+}
+.tail image{
+  height: 40rpx;
+  width: 40rpx;
+ 
+}
+
+.shoucang{
+  display: flex; 
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  height: 90rpx;
+  align-items: center
+}
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+}
