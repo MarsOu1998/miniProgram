@@ -9,7 +9,7 @@
   <view class="nickname">
     <view>个性签名</view>
     <view>
-      <input style="margin-left:120rpx;" placeholder="请输入签名"></input>
+      <input style="margin-left:120rpx;" placeholder="请输入签名" bindinput="inputSign"></input>
       
     </view>
   </view>
@@ -18,7 +18,7 @@
   <view class="nickname">
     <view>我的手机</view>
     <view>
-      <input style="margin-left:120rpx;" placeholder="请输入手机号"></input>
+      <input style="margin-left:120rpx;" placeholder="请输入手机号" bindinput="inputTel"></input>
     </view>
   </view>
 </view>

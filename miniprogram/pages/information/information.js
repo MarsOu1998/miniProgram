@@ -2,8 +2,10 @@
 const app=getApp();
 const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
-var nickname1="lelelelele";
+var nickname1;
 var id;
+var sign1;
+var tel1; 
 
 Page({
 
@@ -11,28 +13,27 @@ Page({
    * Page initial data
    */
   data: {
-    placeholder: app.globalData.userNameGlobal
+    
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+   
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -73,6 +74,12 @@ Page({
   inputNickName:function(event){
     nickname1 = event.detail.value;
   },
+  inputSign: function (event) {
+    sign1 = event.detail.value;
+  },
+  inputTel: function (event) {
+    tel1 = event.detail.value;
+  },
   //提交修改信息
   saveMessage:function(){ 
 
@@ -94,17 +101,33 @@ Page({
           name: 'updateInfo',
           data: {
             _id: id,
-            nickname:nickname1
+            nickname:nickname1,
+            tel: tel1,
+            sign:sign1
+
           },
           success: res => {
             console.log('更新数据成功')
             console.log(nickname1)
-            wx.switchTab({
-              url: '/pages/mine/mine',
-              icon:'success',
-              duration:2500
-            })
             app.globalData.nickName=nickname1;
+            app.globalData.sign = sign1;
+            app.globalData.tel = tel1;
+            wx.showToast({
+              title: '保存成功',
+              icon:'success',
+              duration:1000,
+              success:function(){
+                setTimeout(
+                  function(){
+                    wx.switchTab({
+                      url: '/pages/mine/mine'
+                    })
+                  },1000
+                )
+              }
+            })
+
+
           }
         })
         

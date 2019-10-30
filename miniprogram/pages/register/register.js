@@ -6,7 +6,7 @@ const admin = db.collection('user');
 let userName = null;
 let password = null;
 let passwordAgain = null;
-
+let nickname=null;
 
 Page({
 
@@ -115,6 +115,8 @@ Page({
               data: {
                 account: userName,
                 password: password,
+                nickname: userName,
+                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang.jpg"
               },
               success: function (res) {
 

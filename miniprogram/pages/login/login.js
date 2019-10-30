@@ -93,8 +93,13 @@ Page({
         for(let i=0;i<user.length;i++){
           if(username===user[i].account){
             if(password===user[i].password){
-              // 登录成功后把用户名存入全局变量
-app.globalData.userNameGlobal=username;
+              // 登录成功后把信息存入全局变量
+              app.globalData.userNameGlobal=username;
+              app.globalData.sign = user[i].sign;
+              app.globalData.tel = user[i].telphone;
+              app.globalData.id123=user[i]._id;
+              app.globalData.imageId = user[i].touxiang;
+              console.log("头像地址"+app.globalData.imageId)
               wx.showToast({
                 title: '登陆成功',
                 icon:'success',

@@ -18,7 +18,10 @@
 }
 /* 个性签名 */
 .head2Sign{
-  margin-top: 30rpx;
+  margin-top: 10rpx;
+  color: grey;
+}
+.head2Tel{
   color: grey;
 }
 /* 进入图标 */

@@ -16,8 +16,14 @@ App({
     }
 
     this.globalData = {
-      userNameGlobal:"Hello",
-      nickName:"World"
+     
+      userNameGlobal:"用户名加载中....",
+      nickName:"用户昵称加载中....",
+      sign:"用户签名加载中....",
+      tel:"用户手机号加载中....",
+      touxiang:"",
+      id123:"", //数据库自动分配的_id
+      flag:""
     }
   }
 })

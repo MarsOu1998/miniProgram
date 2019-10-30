@@ -10,7 +10,11 @@ exports.main = async (event, context) => {
   try {
     return await db.collection("user").doc(event._id).update({
       data: {
-        nickname: event.nickname
+        nickname: event.nickname,
+        sign:event.sign,
+        telphone:event.tel,
+        touxiang:event.touxiang1,
+        flag:event.flag
       }
     })
   } catch (e) {

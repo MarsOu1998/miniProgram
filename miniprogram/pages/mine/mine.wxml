@@ -1,23 +1,26 @@
 <!--pages/mine/mine.wxml-->
 <!-- 头像个签 -->
-<view class="head" bindtap="information">
+<view class="head" >
   <!-- 头像 -->
-  <view class="touxiang">
-    <image src="/images/touxiang.jpg"></image>
+  <view class="touxiang" bindtap="changeImage">
+    <image src="{{fileId}}"></image>
   </view>
   <!-- 用户名与个性签名 -->
-  <view class="head2">
+  <view class="head2" bindtap="information">
     <!-- 用户名 -->
     <view class="head2Name">
       {{nickname}}
     </view>
     <!-- 个性签名 -->
     <view class="head2Sign">
-      计科N171
+      {{sign}}
+    </view>
+    <view class="head2Tel">
+      {{tel}}
     </view>
   </view>
   <!-- 进入图标 -->
-  <view class="jinru">
+  <view class="jinru" bindtap="information">
     <image src="/images/jinru.png"></image>
   </view>
 </view>
@@ -102,5 +105,5 @@
 
   <!-- 退出登录 -->
 <view style="margin-top:30rpx;">
-  <button type="warn">退出登录</button>
+  <button type="warn" bindtap="logout">退出登录</button>
 </view>
