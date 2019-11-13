@@ -1,0 +1,19 @@
+page{
+  background: url('https://7061-part-time-job-yw301-1259707559.tcb.qcloud.la/bg1.jpeg?sign=68ab611e23fbf4482e89c6498deb3e0b&t=1570337352');
+background-size:cover;
+}
+
+ 
+.title{
+  font-weight: bold;
+  font-size: 50rpx;
+  
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.bg1{
+  width: 70%;
+  margin: 150rpx auto;
+}
