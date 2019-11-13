@@ -8,8 +8,6 @@ var tel;//电话
 var touxiang;//头像
 var fileId;
 var idname;//fileID
-var zero="0";
-var one="1";
 var time=null;//当前时间
 const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
@@ -130,9 +128,7 @@ Page({
         for (let i = 0; i < user.length; i++) {
           if (app.globalData.userNameGlobal === user[i].account) {
               // 登录成功后把信息存入全局变量
-            app.globalData.flag = user[i].flag;
-            console.log("flag:" + app.globalData.flag);
-            if (app.globalData.flag==zero){
+    
               wx.cloud.uploadFile({
                 cloudPath: 'touxiang/' + app.globalData.id123+time,
                 filePath: imgurl,
@@ -147,8 +143,7 @@ Page({
                       name: 'updateInfo',
                       data: {
                         _id: app.globalData.id123,
-                        touxiang1: app.globalData.imageId,
-                        flag:one
+                        touxiang1: app.globalData.imageId
                       },
                       success: res => {
                         console.log('更新数据成功')
@@ -164,40 +159,7 @@ Page({
                   console.log("上传失败")
                 }
               })
-            }
-            else if (app.globalData.flag == one) {
-              wx.cloud.uploadFile({
-                cloudPath: 'touxiang/'+app.globalData.id123+time,
-                filePath: imgurl,
-                success(res) {
-                  console.log('头像上传成功')
-                  console.log("当前用户_ID" + app.globalData.id123)
-                  console.log(res),
-                    app.globalData.imageId = res.fileID,
-
-                    //调用云函数更新头像地址
-                    wx.cloud.callFunction({
-                      name: 'updateInfo',
-                      data: {
-                        _id: app.globalData.id123,
-                        touxiang1: app.globalData.imageId,
-                        flag: zero
-                      },
-                      success: res => {
-                        console.log('更新数据成功')
-                        fileID: app.globalData.imageId
-                      },
-                      fail: res => {
-                        console.log('更新数据失败')
-                      }
-                    })
-
-                },
-                fail(res) {
-                  console.log("上传失败")
-                }
-              })
-            }
+            
             
             
           }
@@ -205,10 +167,7 @@ Page({
       }
     })
 
-    if (app.globalData.flag==="0"){
-      console.log("flag等于0")
-      
-    }
+
 
     
   }

@@ -116,7 +116,9 @@ Page({
                 account: userName,
                 password: password,
                 nickname: userName,
-                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang.jpg"
+                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang.jpg",
+                sign:' ',
+                telphone:' '
               },
               success: function (res) {
 
