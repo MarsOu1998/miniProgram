@@ -37,6 +37,10 @@ Page({
       for (let i = 0; i < user.length; i++) {
         if (app.globalData.userNameGlobal==user[i].account){
           app.globalData.nickName=user[i].nickname;
+          app.globalData.sign = user[i].sign;
+          app.globalData.tel = user[i].telphone;
+          app.globalData.id123 = user[i]._id;
+          app.globalData.imageId = user[i].touxiang;
           console.log(app.globalData.nickName);
           break;
         }

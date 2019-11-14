@@ -111,17 +111,22 @@ Page({
 
           }
           if (i == user.length) {
+            app.globalData.userNameGlobal = userName;
+
             admin.add({
               data: {
                 account: userName,
                 password: password,
                 nickname: userName,
-                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang.jpg",
+                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/默认头像.jpg",
                 sign:' ',
                 telphone:' '
               },
+              
+              // 注册成功后把信息存入全局变量
+              
               success: function (res) {
-
+               
                 wx.showToast({
                   title: '注册成功',
                   icon: 'success',
@@ -135,6 +140,7 @@ Page({
           }
         }
       })
+      
     }
 
   }

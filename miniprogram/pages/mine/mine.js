@@ -6,6 +6,7 @@ var nickname;//昵称
 var sign;//签名
 var tel;//电话
 var touxiang;//头像
+var oldTouxiang;//存放老头像，便于删除存储中的老图片
 var fileId;
 var idname;//fileID
 var time=null;//当前时间
@@ -127,8 +128,9 @@ Page({
         let user = res.data;
         for (let i = 0; i < user.length; i++) {
           if (app.globalData.userNameGlobal === user[i].account) {
+              console.log("老头像地址:"+user[i].touxiang);
+            oldTouxiang = user[i].touxiang;
               // 登录成功后把信息存入全局变量
-    
               wx.cloud.uploadFile({
                 cloudPath: 'touxiang/' + app.globalData.id123+time,
                 filePath: imgurl,
@@ -151,6 +153,18 @@ Page({
                       },
                       fail: res => {
                         console.log('更新数据失败')
+                      }
+                    })
+                    ,
+                    //删除之前的头像
+                    wx.cloud.deleteFile({
+                      fileList: [oldTouxiang],
+                      success: res => {
+                        // handle success
+                        console.log("老头像删除成功")
+                      },
+                      fail: err => {
+                        console.log("老头像删除失败")
                       }
                     })
 
