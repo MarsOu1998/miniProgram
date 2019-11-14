@@ -84,5 +84,11 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  //跳转到工作页面
+  work1:function(){
+    wx.navigateTo({
+      url: '/pages/work1/work1',
+    })
   }
 })

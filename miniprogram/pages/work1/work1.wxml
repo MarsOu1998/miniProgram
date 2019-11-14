@@ -1,0 +1,44 @@
+<!-- 总体的view -->
+<view class="whole">
+  <!-- 商家信息 -->
+  <view class="title">
+    <!-- 商家头像 -->
+    <view class="touxiang">
+        <image src="cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/job/默认工作图.png"></image>
+    </view>
+    <!-- 商家名称与信用分 -->
+    <view class="nameScore">
+        <!-- 商家名称 -->
+        <view class="name">
+        <view class="font">冰雪蜜城</view>
+        </view>
+         <!-- 商家信用 -->
+        <view class="score">
+            <text>商家信用:60分</text> 
+        </view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class="border"></view>
+  <!-- 地图导航 -->
+  <view class="mapView">
+    <!-- 地图图片 -->
+    <view class="map">
+      <image src="/images/默认地图.png"></image>
+    </view>
+  </view>
+  <view class="border"></view>
+  <!-- 兼职内容 -->
+  <view>
+    <!-- 兼职标题与工资 -->
+    <view class="titleSalary">
+      <view>
+        招聘女服务员一名，可以排班
+      </view>
+      <view class="salary">
+        80元/天
+      </view>
+        
+    </view>
+  </view>
+</view>
