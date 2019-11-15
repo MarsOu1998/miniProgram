@@ -131,10 +131,15 @@ Page({
                   title: '注册成功',
                   icon: 'success',
                   duration: 2500,
-                }),
-                  wx.switchTab({
-                    url: '/pages/index/index',
-                  })
+                  success:function(){
+                    setTimeout(function(){
+                      wx.switchTab({
+                        url: '/pages/index/index',
+                      })
+                    },2000)
+                  }
+                })
+                  
               }
             })
           }

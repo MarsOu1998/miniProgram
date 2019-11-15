@@ -1,5 +1,6 @@
 const cloud = require('wx-server-sdk')
 cloud.init()
+
 //引入发送邮件的类库
 var nodemailer = require('nodemailer')
 // 创建一个SMTP客户端配置
@@ -23,9 +24,9 @@ exports.main = async (event, context) => {
     // 主题
     subject: '来自嘉乐兼职的意见反馈',
     // 收件人
-    to: 'ouyangshile@qq.com',
+    to: '1148206898@qq.com',
     // 邮件内容，text或者html格式
-    text: '请输入您的意见' //可以是链接，也可以是验证码
+    text: '意见:'+event.suggestion //可以是链接，也可以是验证码
   };
 
   let res = await transporter.sendMail(mail);
