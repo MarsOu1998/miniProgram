@@ -1,1 +1,11 @@
-/* pages/like/like.wxss */
+/* 页面为空时 */
+.null{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.null image{
+  height: 200rpx;
+  width: 200rpx;
+}

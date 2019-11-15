@@ -1,1 +1,5 @@
-/* pages/suggestion/suggestion.wxss */
+.input{
+  border-radius: 10rpx;
+ 
+  height: 400rpx;
+}

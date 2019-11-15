@@ -1,2 +1,3 @@
-<!--pages/suggestion/suggestion.wxml-->
-<text>pages/suggestion/suggestion.wxml</text>
+<view>
+  <button type="primary" bindtap="sendEmail">发送邮件</button>
+</view>

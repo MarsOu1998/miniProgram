@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/suggestion/suggestion",
     "pages/login/login",
     "pages/register/register",
     "pages/index/index",
@@ -9,7 +10,7 @@
     "pages/information/information",
     "pages/work1/work1",
     "pages/like/like",
-    "pages/suggestion/suggestion",
+    
     "pages/qiehuan/qiehuan"
   ],
   "window": {

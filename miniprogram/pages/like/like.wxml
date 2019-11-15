@@ -1,2 +1,6 @@
-<!--pages/like/like.wxml-->
-<text>pages/like/like.wxml</text>
+<!-- 负责整体页面view -->
+<view>
+  <view class="null">
+    <image src="/images/null.png"></image>
+  </view>
+</view>

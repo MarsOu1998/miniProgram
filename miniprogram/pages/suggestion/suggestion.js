@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  sendEmail:function(){
+    wx.cloud.callFunction({
+      name:"sentEmail",
+      success(res){
+        console.log("发送成功");
+      },
+      fail(res){
+        console.log("发送失败");
+        console.log(res.data);
+      }
+    })
   }
 })
