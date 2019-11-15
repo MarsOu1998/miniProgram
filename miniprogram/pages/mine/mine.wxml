@@ -74,7 +74,7 @@
   <!-- 所有设置 -->
   <view>
     <!-- 我的收藏 -->
-    <view class="shoucang">
+    <view class="shoucang" bindtap="shoucang">
       <view style><image src="/images/shoucang.png"></image></view>
       <view style="margin-left:20rpx;">我的收藏</view> 
       <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
@@ -82,7 +82,7 @@
     <!--分割线  -->
     <view class="border"></view>
     <!-- 反馈意见 -->
-    <view class="shoucang">
+    <view class="shoucang" bindtap="suggestion">
       <view style><image src="/images/fankui.png"></image></view>
       <view style="margin-left:20rpx;">意见反馈         </view> 
       <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
@@ -91,7 +91,7 @@
   </view>
     <view class="border"></view>
     <!-- 切换商家 -->
-    <view class="shoucang">
+    <view class="shoucang" bindtap="qiehuan">
       <view style><image src="/images/qiehuan.png"></image></view>
       <view style="margin-left:20rpx;">切换商家</view> 
       <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>

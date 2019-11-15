@@ -17,6 +17,10 @@
             <text>商家信用:60分</text> 
         </view>
     </view>
+    <!-- 收藏到我喜欢 -->
+    <view class="like">
+      <image src="/images/xihuan.png"></image>
+    </view>
   </view>
   <!-- 分割线 -->
   <view class="border"></view>
@@ -24,7 +28,7 @@
   <view class="mapView">
     <!-- 地图图片 -->
     <view class="map">
-      <image src="/images/默认地图.png"></image>
+      <image src="/images/defaultMap.png"></image>
     </view>
   </view>
   <view class="border"></view>
@@ -38,7 +42,31 @@
       <view class="salary">
         80元/天
       </view>
-        
+    </view>
+    <!-- 兼职内容 -->
+    <view class="time">
+      <!-- 招聘周期 -->
+      <view>
+        招聘周期：长期工
+      </view>
+      <!-- 兼职时间 -->
+      <view>
+        工作时间：7：00~23：00，可根据课程排班
+      </view>
+      <!-- 结算类型 -->
+      <view>
+        结算类型:日结
+      </view>
+      <!-- 兼职信息 -->
+      <view>
+        制作奶茶，打扫卫生。
+      </view>
+      <!-- 兼职地点 -->
+      <view>
+        兼职地点：浙江省嘉兴市南湖区昌盛南路1153号
+      </view>
+      <!-- 联系方式 -->
+      联系方式：手机：13858748987或进店咨询
     </view>
   </view>
 </view>

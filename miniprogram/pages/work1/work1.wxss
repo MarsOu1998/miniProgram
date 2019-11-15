@@ -19,6 +19,20 @@
 .nameScore{
   margin-left: 20rpx;
 }
+/* 我喜欢 */
+
+.like{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 180rpx;
+}
+
+.like image{
+  height: 70rpx;
+  width: 70rpx;
+}
+
 /* 商家信息——名称 */
 .name{
   margin-top: 18rpx;
@@ -59,4 +73,7 @@
 .salary{
   color: red;
   margin-left:40rpx;
+}
+.time{
+  margin-top: 20rpx;
 }

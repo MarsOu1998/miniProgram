@@ -209,5 +209,20 @@ Page({
     })
     
     
+  },
+  shoucang:function(){
+    wx.navigateTo({
+      url: '/pages/like/like',
+    })
+  },
+  suggestion: function () {
+    wx.navigateTo({
+      url: '/pages/suggestion/suggestion',
+    })
+  },
+  qiehuan: function () {
+    wx.navigateTo({
+      url: '/pages/like/like',
+    })
   }
 })
