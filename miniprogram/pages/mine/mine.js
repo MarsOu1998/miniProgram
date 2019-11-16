@@ -177,69 +177,6 @@ Page({
         console.error;
       }
     })
-
-    // var that=this;
-    // admin.get({
-    //   success: (res) => {
-    //     let user = res.data;
-    //     for (let i = 0; i < user.length; i++) {
-    //       if (app.globalData.userNameGlobal === user[i].account) {
-    //           console.log("老头像地址:"+user[i].touxiang);
-    //         oldTouxiang = user[i].touxiang;
-             
-    //           wx.cloud.uploadFile({
-    //             cloudPath: 'touxiang/' + app.globalData.id123+time,
-    //             filePath: imgurl,
-    //             success(res) {
-    //               console.log('头像上传成功')
-    //               console.log("当前用户_ID" + app.globalData.id123)
-    //               console.log(res),
-    //                 app.globalData.imageId = res.fileID,
-
-    //                 //调用云函数更新头像地址
-    //                 wx.cloud.callFunction({
-    //                   name: 'updateInfo',
-    //                   data: {
-    //                     _id: app.globalData.id123,
-    //                     touxiang1: app.globalData.imageId
-    //                   },
-    //                   success: res => {
-    //                     console.log('更新数据成功')
-    //                     fileID: app.globalData.imageId
-    //                   },
-    //                   fail: res => {
-    //                     console.log('更新数据失败')
-    //                   }
-    //                 })
-    //                 ,
-    //                 //删除之前的头像
-    //                 wx.cloud.deleteFile({
-    //                   fileList: [oldTouxiang],
-    //                   success: res => {
-    //                     // handle success
-    //                     console.log("老头像删除成功")
-    //                   },
-    //                   fail: err => {
-    //                     console.log("老头像删除失败")
-    //                   }
-    //                 })
-
-    //             },
-    //             fail(res) {
-    //               console.log("上传失败")
-    //             }
-    //           })
-            
-            
-            
-    //       }
-    //     }
-    //   }
-    // })
-
-
-
-    
   }
 ,
   information:function(){
@@ -279,6 +216,26 @@ Page({
   qiehuan: function () {
     wx.navigateTo({
       url: '/pages/like/like',
+    })
+  },
+  baoming:function(){
+    wx.navigateTo({
+      url: '/pages/baoming/baoming',
+    })
+  },
+  luqu:function(){
+    wx.navigateTo({
+      url: '/pages/luqu/luqu',
+    })
+  },
+  daogang:function(){
+    wx.navigateTo({
+      url: '/pages/daogang/daogang',
+    })
+  },
+  wancheng:function(){
+    wx.navigateTo({
+      url: '/pages/wancheng/wancheng',
     })
   }
 })

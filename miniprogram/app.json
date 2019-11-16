@@ -1,7 +1,5 @@
 {
   "pages": [
-
-    
     "pages/login/login",
     "pages/register/register",
     "pages/index/index",
@@ -12,7 +10,11 @@
     "pages/work1/work1",
     "pages/like/like",
     "pages/suggestion/suggestion",
-    "pages/qiehuan/qiehuan"
+    "pages/qiehuan/qiehuan",
+    "pages/baoming/baoming",
+    "pages/luqu/luqu",
+    "pages/daogang/daogang",
+    "pages/wancheng/wancheng"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

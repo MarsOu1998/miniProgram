@@ -31,7 +31,7 @@
   <!-- 四个报名信息 -->
   <view class="report4">
     <!-- 已报名 -->
-    <view>
+    <view bindtap="baoming">
       <view>
         <image src="/images/baoming.png"></image>
       </view>
@@ -40,7 +40,7 @@
       </view>
     </view>
     <!-- 已录取 -->
-    <view>
+    <view bindtap="luqu">
       <view>
         <image src="/images/luqu.png"></image>
       </view>
@@ -49,7 +49,7 @@
       </view>
     </view>
     <!-- 已到岗 -->
-    <view>
+    <view bindtap="daogang">
       <view>
         <image src="/images/daogang.png"></image>
       </view>
@@ -58,7 +58,7 @@
       </view>
     </view>
     <!-- 已完成 -->
-    <view>
+    <view bindtap="wancheng">
     <view>
         <image src="/images/wancheng.png"></image>
       </view>
@@ -73,7 +73,7 @@
 <view class="tail">
   <!-- 所有设置 -->
   <view>
-    <!-- 我的收藏 -->
+    <!-- 我的收藏 --> 
     <view class="shoucang" bindtap="shoucang">
       <view style><image src="/images/shoucang.png"></image></view>
       <view style="margin-left:20rpx;">我的收藏</view> 
@@ -96,9 +96,6 @@
       <view style="margin-left:20rpx;">切换商家</view> 
       <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
     </view>
-
-
-  
 </view>
 
 
