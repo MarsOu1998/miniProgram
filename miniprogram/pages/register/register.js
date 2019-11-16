@@ -118,28 +118,20 @@ Page({
                 account: userName,
                 password: password,
                 nickname: userName,
-                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/默认头像.jpg",
-                sign:' ',
-                telphone:' '
+                touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
+                sign:'暂无个性签名',
+                telphone:'暂未填写手机号'
               },
-              
-              // 注册成功后把信息存入全局变量
-              
               success: function (res) {
                
                 wx.showToast({
                   title: '注册成功',
                   icon: 'success',
                   duration: 2500,
-                  success:function(){
-                    setTimeout(function(){
-                      wx.switchTab({
-                        url: '/pages/index/index',
-                      })
-                    },2000)
-                  }
                 })
-                  
+                ,wx.switchTab({
+                  url: '/pages/index/index',
+                })  
               }
             })
           }

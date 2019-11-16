@@ -82,45 +82,59 @@ Page({
   inputPassword:function(event) {
       password=event.detail.value;//把密码放到变量里面
   },
-
-  login(){
-    let that = this;
-    admin.get({
-      success:(res) => {
-        let user=res.data;
-        console.log(res.data);
-        console.log(username);
-        for(let i=0;i<user.length;i++){
-          if(username===user[i].account){
-            if(password===user[i].password){
-              // 登录成功后把信息存入全局变量
-              app.globalData.userNameGlobal=username;
-              app.globalData.sign = user[i].sign;
-              app.globalData.tel = user[i].telphone;
-              app.globalData.id123=user[i]._id;
-              app.globalData.imageId = user[i].touxiang;
-              username=null;//存入全局后将变量清空防止账号登出后依然能进入
-              password=null;//同上
-              console.log("头像地址"+app.globalData.imageId)
-              wx.showToast({
-                title: '登陆成功',
-                icon:'success',
-                duration:2500
-              })
-              wx.switchTab({
-                url: '/pages/index/index'
-              })
-            }
-            else{
-              wx.showToast({
-                title: '密码错误',
-                icon:'none',
-                duration: 2500
-              })
-            }
+  login1:function(){
+    wx.cloud.callFunction({
+      name:'login1',
+      data:{
+        username:username
+      },
+      success:res=>{
+        if(res.result.data.length!=0){
+          console.log("账号存在，查询成功");
+          if (res.result.data[0].password == password){
+            console.log("密码校验成功，即将转入主页");
+            // 登录成功后把信息存入全局变量
+            app.globalData.userNameGlobal = username;
+            app.globalData.nickName = res.result.data[0].nickname;
+            app.globalData.sign = res.result.data[0].sign;
+            app.globalData.tel = res.result.data[0].telphone;
+            app.globalData.id123 = res.result.data[0]._id;
+            app.globalData.imageId = res.result.data[0].touxiang;
+            username = null;//存入全局后将变量清空防止账号登出后依然能进入
+            password = null;//同上
+            wx.showToast({
+              title: '登陆成功',
+              icon:'success',
+              success:function(){
+                setTimeout(function(){
+                  wx.switchTab({
+                    url: '/pages/index/index',
+                  })
+                },2000
+                );
+              }
+            })
+          }
+          else
+          {
+            console.log("密码错误");
+            wx.showToast({
+              title: '密码错误',
+              icon:'none'
+            })
           }
         }
-      }
+        else{
+          console.log("账号不存在，查询失败");
+          wx.showToast({
+            title: '不存在此账号',
+            icon:'none'
+          })
+        }
+      },
+      fail:res=>{
+        console.error();
+      } 
     })
   }
 })

@@ -31,22 +31,23 @@ Page({
    */
   onShow: function () {
     // 进入首页后获取用户昵称和个性签名
-    admin.get({
-    success:(res)=>{
-      let user = res.data;
-      for (let i = 0; i < user.length; i++) {
-        if (app.globalData.userNameGlobal==user[i].account){
-          app.globalData.nickName=user[i].nickname;
-          app.globalData.sign = user[i].sign;
-          app.globalData.tel = user[i].telphone;
-          app.globalData.id123 = user[i]._id;
-          app.globalData.imageId = user[i].touxiang;
-          console.log(app.globalData.nickName);
-          break;
-        }
+    wx.cloud.callFunction({
+      name:'login1',
+      data:{
+        username: app.globalData.userNameGlobal
+      },
+      success:res=>{
+        app.globalData.nickName = res.result.data[0].nickname;
+        app.globalData.sign = res.result.data[0].sign;
+        app.globalData.tel = res.result.data[0].telphone;
+        app.globalData.id123 = res.result.data[0]._id;
+        app.globalData.imageId = res.result.data[0].touxiang;
+      },
+      fail:res=>{
+        console.log("进入主页后数据查询失败");
+        console.error;
       }
-       
-    }
+
     })
 
   },
