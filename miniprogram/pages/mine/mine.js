@@ -164,7 +164,6 @@ Page({
                   console.log("老头像删除失败")
                 }
               })
-
           },
           fail(res) {
             console.log("上传失败")
@@ -185,7 +184,6 @@ Page({
     })
   },
   logout:function(){
-    
     wx.showToast({
       title: '退出登录',
       icon:'success',
@@ -200,8 +198,6 @@ Page({
         )
       }
     })
-    
-    
   },
   shoucang:function(){
     wx.navigateTo({
@@ -215,7 +211,7 @@ Page({
   },
   qiehuan: function () {
     wx.navigateTo({
-      url: '/pages/like/like',
+      url: '/pages/qiehuan/qiehuan',
     })
   },
   baoming:function(){

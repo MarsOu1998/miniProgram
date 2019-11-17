@@ -7,6 +7,7 @@ let userName = null;
 let password = null;
 let passwordAgain = null;
 let nickname=null;
+let flag_business;
 
 Page({
 
@@ -86,6 +87,12 @@ Page({
   inputPasswordAgain: function (event) {
     passwordAgain = event.detail.value;
   },
+  //获取radio的值
+  business:function(event){
+    
+    console.log(event.detail.value);
+  }
+  ,
   register: function () {
     console.log(password+" "+passwordAgain);
     if (password != passwordAgain) {
