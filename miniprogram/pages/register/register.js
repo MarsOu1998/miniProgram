@@ -126,8 +126,8 @@ Page({
                 password: password,
                 nickname: userName,
                 touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
-                sign: '暂无个性签名',
-                telphone: '暂未填写手机号',
+                sign: '个性签名',
+                telphone: '手机号',
                 shangjia:1
               }
             })
@@ -149,8 +149,8 @@ Page({
                   password: password,
                   nickname: userName,
                   touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
-                  sign: '暂无个性签名',
-                  telphone: '暂未填写手机号',
+                  sign: '个性签名',
+                  telphone: '手机号',
                   shangjia: 0
                 }
               })
@@ -172,49 +172,6 @@ Page({
 
         }
       })
-
-      //let that = this;
-      // admin.get({
-      //   success: function (res) {
-      //     let user = res.data;
-      //     for (var i = 0; i < user.length; i++) {
-      //       if (user[i].account == userName) {
-      //         wx.showToast({
-      //           title: '账号已存在',
-      //           icon: 'none'
-      //         })
-      //         break;
-      //       }
-
-      //     }
-      //     if (i == user.length) {
-      //       app.globalData.userNameGlobal = userName;
-
-      //       admin.add({
-      //         data: {
-      //           account: userName,
-      //           password: password,
-      //           nickname: userName,
-      //           touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
-      //           sign:'暂无个性签名',
-      //           telphone:'暂未填写手机号'
-      //         },
-      //         success: function (res) {
-               
-      //           wx.showToast({
-      //             title: '注册成功',
-      //             icon: 'success',
-      //             duration: 2500,
-      //           })
-      //           ,wx.switchTab({
-      //             url: '/pages/index/index',
-      //           })  
-      //         }
-      //       })
-      //     }
-      //   }
-      // })
-      
     }
 
   }

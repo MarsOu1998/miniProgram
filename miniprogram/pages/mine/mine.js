@@ -210,9 +210,18 @@ Page({
     })
   },
   qiehuan: function () {
-    wx.navigateTo({
-      url: '/pages/qiehuan/qiehuan',
-    })
+    if (app.globalData.bflag==0){
+      wx.showToast({
+        title: '您不是商家，请注册商家账户',
+        icon:'none'
+      })
+    }
+    else{
+      wx.navigateTo({
+        url: '/pages/qiehuan/qiehuan',
+      })
+    }
+   
   },
   baoming:function(){
     wx.navigateTo({

@@ -42,6 +42,7 @@ Page({
         app.globalData.tel = res.result.data[0].telphone;
         app.globalData.id123 = res.result.data[0]._id;
         app.globalData.imageId = res.result.data[0].touxiang;
+        app.globalData.bflag=res.result.data[0].shangjia;
       },
       fail:res=>{
         console.log("进入主页后数据查询失败");
