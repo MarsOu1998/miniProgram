@@ -89,8 +89,8 @@ Page({
   },
   //获取radio的值
   business:function(event){
-    
-    console.log(event.detail.value);
+    flag_business=event.detail.value;
+    console.log("是否选择为商家:" + flag_business);
   }
   ,
   register: function () {
@@ -103,47 +103,95 @@ Page({
       })
     }
     else {
-      let that = this;
-      admin.get({
-        success: function (res) {
-          let user = res.data;
-          for (var i = 0; i < user.length; i++) {
-            if (user[i].account == userName) {
-              wx.showToast({
-                title: '账号已存在',
-                icon: 'none'
-              })
-              break;
-            }
-
+      wx.cloud.callFunction({
+        name:'login1',
+        data:{
+          username: userName
+        },
+        success:res=>{
+          if (res.result.data.length!=0){
+            console.log("账号已存在");
+            wx.showToast({
+              title: '账号已存在',
+              icon:'none'
+            })
           }
-          if (i == user.length) {
-            app.globalData.userNameGlobal = userName;
-
+          else{
+            console.log("此账号不存在，可以注册");
+            if(flag_business=="yes"){
             admin.add({
-              data: {
+              data:{
                 account: userName,
                 password: password,
                 nickname: userName,
                 touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
-                sign:'暂无个性签名',
-                telphone:'暂未填写手机号'
-              },
-              success: function (res) {
-               
-                wx.showToast({
-                  title: '注册成功',
-                  icon: 'success',
-                  duration: 2500,
-                })
-                ,wx.switchTab({
-                  url: '/pages/index/index',
-                })  
+                sign: '暂无个性签名',
+                telphone: '暂未填写手机号',
+                shangjia:1
               }
             })
           }
+          else{
+              admin.add({
+                data: {
+                  account: userName,
+                  password: password,
+                  nickname: userName,
+                  touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
+                  sign: '暂无个性签名',
+                  telphone: '暂未填写手机号',
+                  shangjia: 0
+                }
+              })
+          }
+          }
+        },
+        fail:res=>{
+
         }
       })
+
+      //let that = this;
+      // admin.get({
+      //   success: function (res) {
+      //     let user = res.data;
+      //     for (var i = 0; i < user.length; i++) {
+      //       if (user[i].account == userName) {
+      //         wx.showToast({
+      //           title: '账号已存在',
+      //           icon: 'none'
+      //         })
+      //         break;
+      //       }
+
+      //     }
+      //     if (i == user.length) {
+      //       app.globalData.userNameGlobal = userName;
+
+      //       admin.add({
+      //         data: {
+      //           account: userName,
+      //           password: password,
+      //           nickname: userName,
+      //           touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
+      //           sign:'暂无个性签名',
+      //           telphone:'暂未填写手机号'
+      //         },
+      //         success: function (res) {
+               
+      //           wx.showToast({
+      //             title: '注册成功',
+      //             icon: 'success',
+      //             duration: 2500,
+      //           })
+      //           ,wx.switchTab({
+      //             url: '/pages/index/index',
+      //           })  
+      //         }
+      //       })
+      //     }
+      //   }
+      // })
       
     }
 
