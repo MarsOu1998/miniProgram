@@ -118,6 +118,7 @@ Page({
           }
           else{
             console.log("此账号不存在，可以注册");
+            app.globalData.userNameGlobal = userName;
             if(flag_business=="yes"){
             admin.add({
               data:{
@@ -130,6 +131,16 @@ Page({
                 shangjia:1
               }
             })
+            wx.showToast({
+              title: '注册成功，即将进入主页',
+              icon:'none',
+              success:function(){
+                setTimeout(function(){
+                wx.switchTab({
+                  url: '/pages/index/index',
+                })
+              },2000);}
+            })
           }
           else{
               admin.add({
@@ -141,6 +152,17 @@ Page({
                   sign: '暂无个性签名',
                   telphone: '暂未填写手机号',
                   shangjia: 0
+                }
+              })
+              wx.showToast({
+                title: '注册成功，即将进入主页',
+                icon: 'none',
+                success: function () {
+                  setTimeout(function () {
+                    wx.switchTab({
+                      url: '/pages/index/index',
+                    })
+                  }, 2000);
                 }
               })
           }
