@@ -1,0 +1,6 @@
+<view>
+  <view>
+    工作标题:<input  style="margin-top=10rpx;" placeholder="肯德基:服务员一名，可排班"></input>
+  </view>
+  <view class="border"></view>
+</view>

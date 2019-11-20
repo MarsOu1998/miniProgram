@@ -4,18 +4,42 @@
     <text>欢迎商家：{{businessName}}</text>
   </view>
   <view>
-    <view>商家功能</view>
-    <view>
-      <view class="fabu">
-      <image src="/images/fabu.png"></image>
-      工作发布
+    <view style="margin-top:20rpx;">商家功能</view>
+    <view class="function1">
+      <view class="fabu" bindtap="fabu">
+        <view>
+          <image src="/images/fabu.png"></image>
+        </view>
+        <view>
+           工作发布
+        </view>
       </view>
       <view class="shenqing">
-      <image src="/images/shenqing.png"></image>
-      工作申请
+        <view>
+          <image src="/images/shenqing.png"></image>
+        </view>
+        <view>
+          工作申请  
+        </view>
       </view>
-      <view>工作撤销</view>
-      <view>工作结算</view>
+    </view>
+    <view class="function2">
+      <view class="chexiao">
+        <view>
+           <image src="/images/chexiao.png"></image>
+        </view>
+        <view>
+          工作撤销
+        </view>
+      </view>
+      <view class="jiesuan">
+      <view>
+        <image src="/images/jiesuan.png"></image>
+      </view>
+      <view>
+       工作结算 
+      </view>
+      </view>
     </view>
   </view>
 </view>
