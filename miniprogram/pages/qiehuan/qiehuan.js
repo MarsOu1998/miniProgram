@@ -1,3 +1,7 @@
+var businessName;//商家名字
+var app=getApp();//获取全局变量
+
+
 // pages/qiehuan/qiehuan.js
 Page({
 
@@ -5,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
@@ -26,7 +30,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      businessName: app.globalData.nickName
+    })
+    console.log("商家名称:"+businessName);
   },
 
   /**

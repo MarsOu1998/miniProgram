@@ -1,1 +1,11 @@
-/* pages/qiehuan/qiehuan.wxss */
+/* 发布view */
+.fabu image{
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.shenqing image{
+  height: 150rpx;
+  width: 150rpx;
+}
+

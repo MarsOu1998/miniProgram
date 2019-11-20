@@ -1,2 +1,21 @@
-<!--pages/qiehuan/qiehuan.wxml-->
-<text>pages/qiehuan/qiehuan.wxml</text>
+<view>
+  <!-- 欢迎商家 -->
+  <view>
+    <text>欢迎商家：{{businessName}}</text>
+  </view>
+  <view>
+    <view>商家功能</view>
+    <view>
+      <view class="fabu">
+      <image src="/images/fabu.png"></image>
+      工作发布
+      </view>
+      <view class="shenqing">
+      <image src="/images/shenqing.png"></image>
+      工作申请
+      </view>
+      <view>工作撤销</view>
+      <view>工作结算</view>
+    </view>
+  </view>
+</view>
