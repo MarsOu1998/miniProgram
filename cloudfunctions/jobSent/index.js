@@ -17,7 +17,8 @@ exports.main = async (event, context) => {
         salary: event.salary,
         content: event.content,
         place: event.place,
-        phone: event.phone
+        phone: event.phone,
+        job:'1'
       },
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

@@ -49,6 +49,15 @@ Page({
         console.error;
       }
 
+    }),
+    wx.cloud.callFunction({
+      name:'countJob',
+      success:res=>{
+        console.log("当前工作数量:"+res.result.total);
+      },
+      fail:res=>{
+        console.log("计算工作数量失败");
+      }
     })
 
   },
