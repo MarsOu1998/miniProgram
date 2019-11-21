@@ -1,0 +1,79 @@
+/* pages/work1/work1.wxss */
+/* 整体布局 */
+.whole{
+  margin-left: 20rpx;
+}
+/* 商家信息 */
+.title{
+  display: flex;
+}
+/* 商家信息——头像 */
+.touxiang{
+  margin-left: 30rpx;
+}
+.touxiang image{
+  height: 170rpx;
+  width: 170rpx;
+}
+/* 商家名称与信用分 */
+.nameScore{
+  margin-left: 20rpx;
+}
+/* 我喜欢 */
+
+.like{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 180rpx;
+}
+
+.like image{
+  height: 70rpx;
+  width: 70rpx;
+}
+
+/* 商家信息——名称 */
+.name{
+  margin-top: 18rpx;
+}
+.score{
+  color: grey;
+  margin-top: 30rpx;
+}
+.font{
+   font-weight: bold;
+}
+/* 分割线 */
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+}
+/* 地图View */
+.mapView{
+
+}
+
+
+/* 地图图片 */
+.map{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+.map image{
+  height: 450rpx;
+  width: 600rpx;
+}
+/* 兼职工资与名称一栏 */
+.titleSalary{
+  display: flex;
+}
+.salary{
+  color: red;
+  margin-left:40rpx;
+}
+.time{
+  margin-top: 20rpx;
+}

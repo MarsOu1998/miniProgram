@@ -1,0 +1,29 @@
+page{
+  background-color:white;
+}
+
+.title{
+  margin-top: 100rpx;
+  text-align: center;
+  font-size: 50rpx;
+}
+.input{
+  margin-left: 60rpx;
+  margin-top: 20rpx;
+  width: 270px;
+}
+.border1{
+  background-color:#E0E3DA;
+  height: 5rpx;
+  width: 80%;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+}
+.button{
+  margin-top: 30rpx;
+  width: 90%;
+}
+
+.login{
+  margin-top: 20rpx;
+}

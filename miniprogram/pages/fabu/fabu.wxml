@@ -1,0 +1,46 @@
+<view>
+  <view>
+    工作标题:<input bindinput="biaoti" style="margin-top=10rpx;" placeholder="例：肯德基:服务员一名，可排班"></input>
+  </view>
+  <view class="border"></view>
+  <view>
+  结算类型
+  <radio-group bindchange="leixing">
+    <radio value="rijie">日结</radio>
+    <radio value="yuejie">周结</radio>
+    <radio value="yuejie">月结</radio>
+  </radio-group>
+  招聘期限
+  <radio-group bindchange="qixian">
+    <radio value="changqi">长期</radio>
+    <radio value="duanqi">短期</radio>
+  </radio-group>
+  性别要求
+  <radio-group bindchange="yaoqiu">
+    <radio value="none">男女不限</radio>
+    <radio value="nan">要求男性</radio>
+    <radio value="nv">要求女性</radio>
+  </radio-group>
+  </view>
+  <view>
+    工资:<input bindinput="gongzi" style="margin-top=10rpx;" placeholder="例：80/天"></input>
+  </view>
+  <view class="border"></view>
+  <view class="border"></view>
+    <view>
+      工作内容:<input bindinput="neirong" style="margin-top=10rpx;" placeholder="例：早上9点～下午1点 制作食品，打扫卫生"></input>
+    </view>
+    <view class="border"></view>
+    <view>
+      工作地点:<input bindinput="didian" style="margin-top=10rpx;" placeholder="例：越秀南路101号"></input>
+    </view>
+        <view class="border"></view>
+    <view>
+      联系方式:<input bindinput="lianxi" style="margin-top=10rpx;" placeholder="例：15968316554"></input>
+    </view>
+    <view class="border"></view>
+    <view class="border"></view>
+    <view>
+      <button type="primary" bindtap="fabu">发布</button>
+    </view>
+</view>

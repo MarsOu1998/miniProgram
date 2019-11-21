@@ -1,0 +1,106 @@
+<!--pages/mine/mine.wxml-->
+<!-- 头像个签 -->
+<view class="head" >
+  <!-- 头像 -->
+  <view class="touxiang" bindtap="changeImage">
+    <image src="{{fileId}}"></image>
+  </view>
+  <!-- 用户名与个性签名 -->
+  <view class="head2" bindtap="information">
+    <!-- 用户名 -->
+    <view class="head2Name">
+      {{nickname}}
+    </view>
+    <!-- 个性签名 -->
+    <view class="head2Sign">
+      {{sign}}
+    </view>
+    <view class="head2Tel">
+      {{tel}}
+    </view>
+  </view>
+  <!-- 进入图标 -->
+  <view class="jinru" bindtap="information">
+    <image src="/images/jinru.png"></image>
+  </view>
+</view>
+<!-- 报名信息 -->
+<view class="content">
+  <!-- 我的报名 -->
+  <view>我的报名</view>
+  <!-- 四个报名信息 -->
+  <view class="report4">
+    <!-- 已报名 -->
+    <view bindtap="baoming">
+      <view>
+        <image src="/images/baoming.png"></image>
+      </view>
+      <view>
+        已报名
+      </view>
+    </view>
+    <!-- 已录取 -->
+    <view bindtap="luqu">
+      <view>
+        <image src="/images/luqu.png"></image>
+      </view>
+      <view>
+        已录取
+      </view>
+    </view>
+    <!-- 已到岗 -->
+    <view bindtap="daogang">
+      <view>
+        <image src="/images/daogang.png"></image>
+      </view>
+      <view>
+        已到岗
+      </view>
+    </view>
+    <!-- 已完成 -->
+    <view bindtap="wancheng">
+    <view>
+        <image src="/images/wancheng.png"></image>
+      </view>
+      <view>
+        已完成
+      </view>
+    </view>
+    
+  </view>
+</view>
+<!-- 个人设置 -->
+<view class="tail">
+  <!-- 所有设置 -->
+  <view>
+    <!-- 我的收藏 --> 
+    <view class="shoucang" bindtap="shoucang">
+      <view style><image src="/images/shoucang.png"></image></view>
+      <view style="margin-left:20rpx;">我的收藏</view> 
+      <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
+    </view>
+    <!--分割线  -->
+    <view class="border"></view>
+    <!-- 反馈意见 -->
+    <view class="shoucang" bindtap="suggestion">
+      <view style><image src="/images/fankui.png"></image></view>
+      <view style="margin-left:20rpx;">意见反馈         </view> 
+      <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
+    </view>
+    <view class="border"></view>
+  </view>
+    <view class="border"></view>
+    <!-- 切换商家 -->
+    <view class="shoucang" bindtap="qiehuan">
+      <view style><image src="/images/qiehuan.png"></image></view>
+      <view style="margin-left:20rpx;">切换商家</view> 
+      <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
+    </view>
+</view>
+
+
+
+  <!-- 退出登录 -->
+<view style="margin-top:30rpx;">
+  <button type="warn" bindtap="logout">退出登录</button>
+</view>

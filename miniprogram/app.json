@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/fabu/fabu",
+    "pages/qiehuan/qiehuan",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/mine/mine",
+    "pages/indexDetail/indexDetail",
+    "pages/information/information",
+    "pages/work1/work1",
+    "pages/like/like",
+    "pages/suggestion/suggestion",
+   
+    "pages/baoming/baoming",
+    "pages/luqu/luqu",
+    "pages/daogang/daogang",
+    "pages/wancheng/wancheng"
+    
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "嘉乐兼职",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/shouye.png",
+        "selectedIconPath": "/images/sshouye.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "/images/sousuo.png",
+        "selectedIconPath": "/images/ssousuo.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/wode.png",
+        "selectedIconPath": "/images/swode.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

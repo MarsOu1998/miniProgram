@@ -1,0 +1,48 @@
+
+page{
+  margin-left: 30rpx;
+}
+
+.function1{
+  display: flex;
+}
+.function2{
+  margin-top: 20rpx;
+  display: flex;
+}
+/* 发布view */
+.fabu{
+  margin-left: 90rpx;
+}
+
+.fabu image{
+  height: 150rpx;
+  width: 150rpx;
+}
+/* 申请view */
+.shenqing{
+   margin-left: 170rpx;
+}
+.shenqing image{
+  height: 150rpx;
+  width: 150rpx;
+
+
+}
+/* 撤销view */
+.chexiao{
+  margin-left: 90rpx;
+}
+.chexiao image{
+  height: 150rpx;
+  width: 150rpx;
+}
+/* 结算view */
+.jiesuan{
+  margin-left: 170rpx;
+}
+
+.jiesuan image{
+  height: 150rpx;
+  width: 150rpx;
+}
