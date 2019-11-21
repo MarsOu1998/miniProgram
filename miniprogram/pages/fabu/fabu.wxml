@@ -26,7 +26,6 @@
     工资:<input bindinput="gongzi" style="margin-top=10rpx;" placeholder="例：80/天"></input>
   </view>
   <view class="border"></view>
-  <view class="border"></view>
     <view>
       工作内容:<input bindinput="neirong" style="margin-top=10rpx;" placeholder="例：早上9点～下午1点 制作食品，打扫卫生"></input>
     </view>
