@@ -23,10 +23,12 @@ exports.main = async (event, context) => {
       .where({
         job:"1", // 查找需要返回的记录
       })
-      .skip(event.count-5) // 跳过结果集中的前 count 条，从第 count+1 条开始返回
+      .skip(event.count-5) // 跳过结果集中的前 count-5 条，从第 count-4 条开始返回
       .limit(5) // 限制返回数量为 5 条
       .get({
         success:function(res){
+          console.log("数目:");
+          console.log(event.count);
           return res;
         }
       }
