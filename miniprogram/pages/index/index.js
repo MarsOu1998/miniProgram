@@ -3,8 +3,13 @@ const app = getApp()
 const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
 var total;//当前工作数量
+// 用来动态存放数据库中最后五个工作内容
+var job1 = [];
+var job2 = [];
+var job3 = [];
+var job4 = [];
+var job5 = [];
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -63,7 +68,9 @@ Page({
           success: res => {
             console.log("当前工作数量:" + total);
             console.log("获取最后五条工作记录如下:");
-            console.log(res.result);
+            //console.log(res.result);
+            job1=res.result.data[0];
+            console.log(job1);
           },
           fail: res => {
             console.log("工作内容获取失败");
