@@ -2,15 +2,12 @@
 <view class="whole">
   <!-- 商家信息 -->
   <view class="title">
-    <!-- 商家头像 -->
-    <view class="touxiang">
-        <image src="cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/job/默认工作图.png"></image>
-    </view>
     <!-- 商家名称与信用分 -->
     <view class="nameScore">
         <!-- 商家名称 -->
         <view class="name">
-        <view class="font">冰雪蜜城</view>
+        <view class="font">商家名称:蜜雪冰城</view>
+        <view>发布者:{{job1['account']}}</view>
         </view>
          <!-- 商家信用 -->
         <view class="score">
@@ -37,36 +34,36 @@
     <!-- 兼职标题与工资 -->
     <view class="titleSalary">
       <view>
-        招聘女服务员一名，可以排班
+        {{job1['title']}}
       </view>
       <view class="salary">
-        80元/天
+        {{job1['salary']}}
       </view>
     </view>
     <!-- 兼职内容 -->
     <view class="time">
       <!-- 招聘周期 -->
       <view>
-        招聘周期：长期工
+        招聘周期:{{job1['time']}}
       </view>
       <!-- 兼职时间 -->
       <view>
-        工作时间：7：00~23：00，可根据课程排班
+        工作内容:{{job1['content']}}
       </view>
       <!-- 结算类型 -->
       <view>
-        结算类型:日结
+        结算类型:{{job1['type']}}
       </view>
       <!-- 兼职信息 -->
       <view>
-        制作奶茶，打扫卫生。
+        工作内容:{{job1['content']}}
       </view>
       <!-- 兼职地点 -->
       <view>
-        兼职地点：浙江省嘉兴市南湖区昌盛南路1153号
+        兼职地点：{{job1['place']}}
       </view>
       <!-- 联系方式 -->
-      联系方式：手机：13858748987或进店咨询
+      联系方式：{{job1['phone']}}
     </view>
   </view>
 </view>

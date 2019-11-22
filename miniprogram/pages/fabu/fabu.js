@@ -80,6 +80,10 @@ Page({
   //获取结算类型
   leixing:function(event){
     type=event.detail.value;
+    switch(type){
+      case "rijie":type="日结"    
+      
+      }
   },
   //获取招聘期限
   qixian:function(event){

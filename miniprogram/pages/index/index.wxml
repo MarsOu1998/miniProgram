@@ -28,15 +28,15 @@
     <view>
       <!-- 工作简介 -->
       <image src="/images/icon1.png"></image>
-      冰雪蜜城：女服务员一名，可排班
+      {{job5['title']}}
     </view>
     <!-- 工作类型 -->
     <view class="type">
       <view class="time">
-        日结 | 长期 | 只限女生
+        {{job5['type']}} | {{job5['time']}} | {{job5['sex']}}
       </view>
       <view class="salary">
-          80元/天
+          {{job5['salary']}}
       </view>
       </view>
       <!-- 分割线 -->
@@ -47,15 +47,15 @@
     <view>
       <!-- 工作简介 -->
       <image src="/images/icon2.png"></image>
-      Coco：男服务员一名，可排班
+      {{job4['title']}}
     </view>
     <!-- 工作类型 -->
     <view class="type">
       <view class="time">
-        日结 | 长期 | 只限男生
+        {{job4['type']}} | {{job4['time']}} | {{job4['sex']}}
       </view>
       <view class="salary">
-          12元/时
+          {{job4['salary']}}
       </view>
       </view>
       <!-- 分割线 -->
@@ -65,15 +65,15 @@
     <view>
       <!-- 工作简介 -->
       <image src="/images/icon1.png"></image>
-      麦当劳：服务员一名，可排班
+      {{job3['title']}}
     </view>
     <!-- 工作类型 -->
     <view class="type">
       <view class="time">
-        日结 | 长期 | 男女不限
+        {{job3['type']}} | {{job3['time']}} | {{job3['sex']}}
       </view>
       <view class="salary">
-          13元/时
+          {{job3['salary']}}
       </view>
       </view>
       <!-- 分割线 -->
@@ -83,15 +83,15 @@
     <view>
       <!-- 工作简介 -->
       <image src="/images/icon4.png"></image>
-      肯德基：服务员一名，可排班
+      {{job2['title']}}
     </view>
     <!-- 工作类型 -->
     <view class="type">
       <view class="time">
-        日结 | 长期 | 男女不限
+        {{job2['type']}} | {{job2['time']}} | {{job2['sex']}}
       </view>
       <view class="salary">
-          13元/时
+          {{job2['salary']}}
       </view>
       </view>
       <!-- 分割线 -->
@@ -101,19 +101,18 @@
     <view>
       <!-- 工作简介 -->
       <image src="/images/icon1.png"></image>
-      麦当劳：服务员一名，可排班
+      {{job1['title']}}
     </view>
     <!-- 工作类型 -->
     <view class="type">
       <view class="time">
-        日结 | 长期 | 男女不限
+        {{job1['type']}} | {{job1['time']}} | {{job1['sex']}}
       </view>
       <view class="salary">
-          13元/时
+          {{job1['salary']}}
       </view>
       </view>
       <!-- 分割线 -->
       <view class="border"></view>
   </view> 
-  
 </view>

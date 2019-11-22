@@ -6,20 +6,20 @@
   <view>
   结算类型
   <radio-group bindchange="leixing">
-    <radio value="rijie">日结</radio>
-    <radio value="yuejie">周结</radio>
-    <radio value="yuejie">月结</radio>
+    <radio value="日结">日结</radio>
+    <radio value="周结">周结</radio>
+    <radio value="月结">月结</radio>
   </radio-group>
   招聘期限
   <radio-group bindchange="qixian">
-    <radio value="changqi">长期</radio>
-    <radio value="duanqi">短期</radio>
+    <radio value="长期">长期</radio>
+    <radio value="短期">短期</radio>
   </radio-group>
   性别要求
   <radio-group bindchange="yaoqiu">
-    <radio value="none">男女不限</radio>
-    <radio value="nan">要求男性</radio>
-    <radio value="nv">要求女性</radio>
+    <radio value="男女不限">男女不限</radio>
+    <radio value="要求男性">要求男性</radio>
+    <radio value="要求女性">要求女性</radio>
   </radio-group>
   </view>
   <view>

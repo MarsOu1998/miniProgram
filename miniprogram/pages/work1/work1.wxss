@@ -17,7 +17,7 @@
 }
 /* 商家名称与信用分 */
 .nameScore{
-  margin-left: 20rpx;
+  margin-left: 30rpx;
 }
 /* 我喜欢 */
 
@@ -39,7 +39,7 @@
 }
 .score{
   color: grey;
-  margin-top: 30rpx;
+  margin-top: 10rpx;
 }
 .font{
    font-weight: bold;

@@ -39,13 +39,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
-
-
     time=date.formatTime(new Date());
     console.log("现在的时间是:"+time);
-
-
     console.log(app.globalData.userNameGlobal);
     console.log("nicknam"+app.globalData.nickName);
     console.log("当前头像地址:" + app.globalData.imageId);

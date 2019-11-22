@@ -4,11 +4,12 @@ const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
 var total;//当前工作数量
 // 用来动态存放数据库中最后五个工作内容
-var job1 = [];
-var job2 = [];
-var job3 = [];
-var job4 = [];
-var job5 = [];
+var job1;
+var job2;
+var job3;
+var job4;
+var job5;
+var title;
 Page({
   /**
    * 页面的初始数据
@@ -69,8 +70,20 @@ Page({
             console.log("当前工作数量:" + total);
             console.log("获取最后五条工作记录如下:");
             //console.log(res.result);
-            job1=res.result.data[0];
-            console.log(job1);
+            this.setData({
+              job1 : res.result.data[0],
+              job2 : res.result.data[1],
+              job3 : res.result.data[2],
+              job4 : res.result.data[3],
+              job5 : res.result.data[4],
+            })
+            app.globalData.job1 = res.result.data[0];
+            app.globalData.job2 = res.result.data[1];
+            app.globalData.job3 = res.result.data[2];
+            app.globalData.job4 = res.result.data[3];
+            app.globalData.job5 = res.result.data[4];
+            //console.log("全局工作变量"+app.globalData.job1['title']);
+            
           },
           fail: res => {
             console.log("工作内容获取失败");
@@ -81,7 +94,7 @@ Page({
         console.log("计算工作数量失败");
       }
     })
-    
+
 
   },
 

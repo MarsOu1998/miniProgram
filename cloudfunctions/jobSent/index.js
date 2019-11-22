@@ -14,6 +14,7 @@ exports.main = async (event, context) => {
        title:event.title,
        time: event.time,
        sex: event.sex,
+       type:event.type,
         salary: event.salary,
         content: event.content,
         place: event.place,
