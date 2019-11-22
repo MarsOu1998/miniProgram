@@ -2,7 +2,7 @@
 const app = getApp()
 const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
-
+var total;//当前工作数量
 Page({
 
   /**
@@ -53,10 +53,25 @@ Page({
     wx.cloud.callFunction({
       name:'countJob',
       success:res=>{
-        console.log("当前工作数量:"+res.result.total);
+        total = res.result.total;
+        console.log("当前工作数量:" + total);
       },
       fail:res=>{
         console.log("计算工作数量失败");
+      }
+    }),
+    wx.cloud.callFunction({
+      name:'getJob',
+      data:{
+        count:total
+      },
+      success:res=>{
+        console.log("当前工作数量:" +total);
+        console.log("获取最后五条工作记录如下:");
+        console.log(res.result);
+      },
+      fail:res=>{
+        console.log("工作内容获取失败");
       }
     })
 
