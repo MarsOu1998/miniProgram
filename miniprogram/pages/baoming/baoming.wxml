@@ -1,0 +1,5 @@
+<view>
+  <view class="null">
+    <image src="/images/null.png"></image>
+  </view>
+</view>

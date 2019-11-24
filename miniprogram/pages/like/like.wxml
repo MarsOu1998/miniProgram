@@ -1,0 +1,6 @@
+<!-- 负责整体页面view -->
+<view>
+  <view class="null">
+    <image src="/images/null.png"></image>
+  </view>
+</view>

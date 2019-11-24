@@ -1,0 +1,12 @@
+<view>
+  <!-- 填写意见 -->
+  <view>
+    <text>意见:</text>
+    <input placeholder="请输入您的意见或建议：" bindinput="input"></input>
+  </view>
+  <view class="border1"></view>
+  <!-- 填写按钮 -->
+  <view class="button">
+    <button type="primary" bindtap="sendEmail">发送邮件</button>
+  </view>
+</view>
