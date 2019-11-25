@@ -69,7 +69,7 @@ Page({
           success: res => {
             console.log("当前工作数量:" + total);
             console.log("获取最后五条工作记录如下:");
-            //console.log(res.result);
+            console.log(res.result);
             this.setData({
               job1 : res.result.data[0],
               job2 : res.result.data[1],
@@ -134,8 +134,10 @@ Page({
   },
   //跳转到工作页面
   work1:function(){
+    app.globalData.job = app.globalData.job5;
     wx.navigateTo({
       url: '/pages/work1/work1',
     })
-  }
+  },
+
 })

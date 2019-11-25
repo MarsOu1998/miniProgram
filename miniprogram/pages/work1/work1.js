@@ -1,5 +1,5 @@
 var app=getApp();
-var job1;
+var job;
 Page({
 
   /**
@@ -14,9 +14,9 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      job1: app.globalData.job1
+      job: app.globalData.job
     })
-      console.log(job1);
+      console.log(job);
   },
 
   /**

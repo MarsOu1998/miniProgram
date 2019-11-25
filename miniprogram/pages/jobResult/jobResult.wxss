@@ -1,0 +1,10 @@
+.work{
+  padding-left:30rpx;
+  height: 200rpx;
+}
+.work image{
+  height: 50rpx;
+  width: 50rpx;
+  padding-right: 20rpx;
+  margin-top: 30rpx;
+}

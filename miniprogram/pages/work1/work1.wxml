@@ -7,7 +7,7 @@
         <!-- 商家名称 -->
         <view class="name">
         <view class="font">商家名称:蜜雪冰城</view>
-        <view>发布者:{{job1['account']}}</view>
+        <view>发布者:{{job['account']}}</view>
         </view>
          <!-- 商家信用 -->
         <view class="score">
@@ -34,36 +34,36 @@
     <!-- 兼职标题与工资 -->
     <view class="titleSalary">
       <view>
-        {{job1['title']}}
+        {{job['title']}}
       </view>
       <view class="salary">
-        {{job1['salary']}}
+        {{job['salary']}}
       </view>
     </view>
     <!-- 兼职内容 -->
     <view class="time">
       <!-- 招聘周期 -->
       <view>
-        招聘周期:{{job1['time']}}
+        招聘周期:{{job['time']}}
       </view>
       <!-- 兼职时间 -->
       <view>
-        工作内容:{{job1['content']}}
+        工作内容:{{job['content']}}
       </view>
       <!-- 结算类型 -->
       <view>
-        结算类型:{{job1['type']}}
+        结算类型:{{job['type']}}
       </view>
       <!-- 兼职信息 -->
       <view>
-        工作内容:{{job1['content']}}
+        工作内容:{{job['content']}}
       </view>
       <!-- 兼职地点 -->
       <view>
-        兼职地点：{{job1['place']}}
+        兼职地点：{{job['place']}}
       </view>
       <!-- 联系方式 -->
-      联系方式：{{job1['phone']}}
+      联系方式：{{job['phone']}}
     </view>
   </view>
 </view>

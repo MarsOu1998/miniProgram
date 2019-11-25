@@ -1,3 +1,4 @@
+var app=getApp();
 var input;
 
 // pages/search/search.js
@@ -66,18 +67,13 @@ Page({
 
   },
   input:function(res){
-    input=res.detail.value;
+    app.globalData.jobSearch=res.detail.value;
+    
   },
   search:function(){
-    wx.cloud.callFunction({
-      name:'searchJob',
-      data:{
-        query:input
-      },
-      success:function(res){
-        console.log("工作搜索结果如下:");
-        console.log(res.result);
-      }
+    console.log("全局变量——工作关键字已存储：" + app.globalData.jobSearch);
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
     })
   }
 })

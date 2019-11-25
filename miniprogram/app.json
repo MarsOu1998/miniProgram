@@ -1,7 +1,7 @@
 {
   "pages": [
 
-    
+   
     "pages/login/login",
     "pages/register/register",
     "pages/index/index",
@@ -17,7 +17,9 @@
     "pages/baoming/baoming",
     "pages/luqu/luqu",
     "pages/daogang/daogang",
-    "pages/wancheng/wancheng"
+    "pages/wancheng/wancheng",
+    "pages/jobResult/jobResult"
+    
     
   ],
   "window": {
