@@ -6,16 +6,16 @@
     <view class="nameScore">
         <!-- 商家名称 -->
         <view class="name">
-        <view class="font">商家名称:蜜雪冰城</view>
+        <view class="font">商家名称:{{job['nickname']}}</view>
         <view>发布者:{{job['account']}}</view>
         </view>
          <!-- 商家信用 -->
         <view class="score">
-            <text>商家信用:60分</text> 
+            <text>商家信用:{{job['creditScore']}}</text> 
         </view>
     </view>
     <!-- 收藏到我喜欢 -->
-    <view class="like">
+    <view class="like" bindtap="shoucang">
       <image src="/images/xihuan.png"></image>
     </view>
   </view>

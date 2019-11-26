@@ -33,7 +33,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
   },
 
   /**
@@ -89,47 +88,49 @@ Page({
         username:username
       },
       success:res=>{
-        if(res.result.data.length!=0){
-          console.log("账号存在，查询成功");
-          if (res.result.data[0].password == password){
-            console.log("密码校验成功，即将转入主页");
-            // 登录成功后把信息存入全局变量
-            app.globalData.userNameGlobal = username;
-            app.globalData.nickName = res.result.data[0].nickname;
-            app.globalData.sign = res.result.data[0].sign;
-            app.globalData.tel = res.result.data[0].telphone;
-            app.globalData.id123 = res.result.data[0]._id;
-            app.globalData.imageId = res.result.data[0].touxiang;
-            username = null;//存入全局后将变量清空防止账号登出后依然能进入
-            password = null;//同上
-            wx.showToast({
-              title: '登陆成功',
-              icon:'success',
-              success:function(){
-                setTimeout(function(){
-                  wx.switchTab({
-                    url: '/pages/index/index',
-                  })
-                },2000
-                );
-              }
-            })
-          }
-          else
-          {
-            console.log("密码错误");
-            wx.showToast({
-              title: '密码错误',
-              icon:'none'
-            })
-          }
+        if (username == null) {
+          wx.showToast({
+            title: '账号不可以为空',
+            icon: 'none'
+          })
         }
         else{
-          console.log("账号不存在，查询失败");
-          wx.showToast({
-            title: '不存在此账号',
-            icon:'none'
-          })
+          if (res.result.data.length != 0) {
+            console.log("账号存在，查询成功");
+            if (res.result.data[0].password == password) {
+              console.log("密码校验成功，即将转入主页");
+              // 登录成功后把信息存入全局变量
+              app.globalData.userNameGlobal = username;
+              username = null;//存入全局后将变量清空防止账号登出后依然能进入
+              password = null;//同上
+              wx.showToast({
+                title: '登陆成功',
+                icon: 'success',
+                success: function () {
+                  setTimeout(function () {
+                    wx.switchTab({
+                      url: '/pages/index/index',
+                    })
+                  }, 2000
+                  );
+                }
+              })
+            }
+            else {
+              console.log("密码错误");
+              wx.showToast({
+                title: '密码错误',
+                icon: 'none'
+              })
+            }
+          }
+          else {
+            console.log("账号不存在，查询失败");
+            wx.showToast({
+              title: '不存在此账号',
+              icon: 'none'
+            })
+          }
         }
       },
       fail:res=>{

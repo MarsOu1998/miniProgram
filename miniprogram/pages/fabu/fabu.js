@@ -7,6 +7,7 @@ var salary;
 var content;
 var place;
 var phone;
+var nickname;//存放输入的店名
 
 // pages/fabu/fabu.js
 Page({
@@ -109,12 +110,15 @@ Page({
   lianxi:function(event){
     phone=event.detail.value;
   },
+  dianming:function(event){
+    nickname=event.detail.value;
+  },
   //发布工作
   fabu:function(){
     wx.cloud.callFunction({
       name:'jobSent',
       data:{
-        account: app.globalData.userNameGlobal,
+        account:app.globalData.accountInfo['account'],
         title:title,
         type:type,
         time:time,
@@ -122,10 +126,15 @@ Page({
         salary:salary,
         content:content,
         place:place,
-        phone:phone
+        phone:phone,
+        nickname: nickname,
+        creditScore:app.globalData.accountInfo['creditScore']
       },
       success:res=>{
         console.log("工作发布成功");
+        wx.redirectTo({
+          url: '/pages/qiehuan/qiehuan',
+        })
       },
       fail:res=>{
         console.log("工作发布失败");

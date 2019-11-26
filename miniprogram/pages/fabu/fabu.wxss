@@ -1,3 +1,6 @@
+page{
+  background-color: white;
+}
 .border{
  background-color: #E0E3DA;
  width: 100%;

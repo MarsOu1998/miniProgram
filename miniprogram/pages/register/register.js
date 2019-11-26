@@ -128,7 +128,8 @@ Page({
                 touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
                 sign: '个性签名',
                 telphone: '手机号',
-                shangjia:1
+                shangjia:1,
+                creditScore:60
               }
             })
             wx.showToast({

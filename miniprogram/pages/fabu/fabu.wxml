@@ -1,6 +1,6 @@
 <view>
   <view>
-    工作标题:<input bindinput="biaoti" style="margin-top=10rpx;" placeholder="例：肯德基:服务员一名，可排班"></input>
+    工作标题:<input bindinput="biaoti" style="margin-top=10rpx;" placeholder="例：好味道面馆:服务员一名，可排班"></input>
   </view>
   <view class="border"></view>
   <view>
@@ -38,6 +38,9 @@
       联系方式:<input bindinput="lianxi" style="margin-top=10rpx;" placeholder="例：15968316554"></input>
     </view>
     <view class="border"></view>
+    <view>
+      店名:<input bindinput="dianming" style="margin-top=10rpx;" placeholder="例：好味道面馆"></input>
+    </view>
     <view class="border"></view>
     <view>
       <button type="primary" bindtap="fabu">发布</button>

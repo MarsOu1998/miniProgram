@@ -2,10 +2,9 @@
 const app=getApp();
 const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
-var nickname1;
-var id;
-var sign1;
-var tel1; 
+var nickname;
+var sign;
+var telphone; 
 
 Page({
 
@@ -33,7 +32,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    
+    console.log("已获取全局变量——账号信息");
+    console.log(app.globalData.accountInfo);
   },
 
   /**
@@ -72,68 +72,55 @@ Page({
   },
   //保存从键盘输入的用户名
   inputNickName:function(event){
-    nickname1 = event.detail.value;
+    nickname = event.detail.value;
   },
   inputSign: function (event) {
-    sign1 = event.detail.value;
+    sign = event.detail.value;
   },
   inputTel: function (event) {
-    tel1 = event.detail.value;
+    telphone = event.detail.value;
   },
   //提交修改信息
   saveMessage:function(){ 
+    wx.cloud.callFunction({
+      name: 'updateInfo',
+      data: {
+        _id: app.globalData.accountInfo['_id'],
+        nickname: nickname,
+        tel: telphone,
+        sign: sign
 
-    let that = this;
-    admin.get({
-      success: (res) => {
-        let user = res.data;
-        console.log(res.data);
-        console.log(user.length);
-        for (var i = 0; i < user.length; i++){
-          if (app.globalData.userNameGlobal === user[i].account) {
-            id=user[i]._id;
-            break;
-          }
-        }
-        console.log(id);
-
+      },
+      success: res => {
+        console.log('更新数据成功')
         wx.cloud.callFunction({
-          name: 'updateInfo',
+          name: 'login1',
           data: {
-            _id: id,
-            nickname:nickname1,
-            tel: tel1,
-            sign:sign1
-
+            username: app.globalData.userNameGlobal
           },
           success: res => {
-            console.log('更新数据成功')
-            console.log(nickname1)
-            app.globalData.nickName=nickname1;
-            app.globalData.sign = sign1;
-            app.globalData.tel = tel1;
-            wx.showToast({
-              title: '保存成功',
-              icon:'success',
-              duration:1000,
-              success:function(){
-                setTimeout(
-                  function(){
-                    wx.switchTab({
-                      url: '/pages/mine/mine'
-                    })
-                  },1000
-                )
-              }
-            })
-
-
+            app.globalData.accountInfo = res.result.data[0];
+            console.log("当前用户的账号信息已存入全局变量,变更后信息如下:");
+            console.log(app.globalData.accountInfo);
           }
         })
-        
+        wx.showToast({
+          title: '保存成功',
+          icon: 'success',
+          duration: 1000,
+          success: function () {
+            setTimeout(
+              function () {
+                wx.switchTab({
+                  url: '/pages/mine/mine'
+                })
+              }, 1000
+            )
+          }
+        })
+
 
       }
-    })
-       
+    })   
   }
 })

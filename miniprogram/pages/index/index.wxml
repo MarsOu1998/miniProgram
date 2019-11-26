@@ -23,96 +23,27 @@
   <!-- 精选推荐标题 -->
   <view class="title">精选推荐</view>
   <!-- 工作内容 -->
+  <view wx:for="{{result}}">
+        <view class="work" bindtap="{{index}}">
+    <view>
+      <!-- 工作简介 -->
+      <image src="/images/icon1.png"></image>
+      {{item['title']}}
+    </view>
+    <!-- 工作类型 -->
+    <view class="type">
+      <view class="time">
+        {{item['type']}} | {{item['time']}} | {{item['sex']}}
+      </view>
+      <view class="salary">
+          {{item['salary']}}
+      </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="border"></view>
+  </view>
+  </view>
   <!-- 工作1 -->
-  <view class="work" bindtap="work1">
-    <view>
-      <!-- 工作简介 -->
-      <image src="/images/icon1.png"></image>
-      {{job5['title']}}
-    </view>
-    <!-- 工作类型 -->
-    <view class="type">
-      <view class="time">
-        {{job5['type']}} | {{job5['time']}} | {{job5['sex']}}
-      </view>
-      <view class="salary">
-          {{job5['salary']}}
-      </view>
-      </view>
-      <!-- 分割线 -->
-      <view class="border"></view>
-  </view>
-  <!-- 工作2 -->
-    <view class="work">
-    <view>
-      <!-- 工作简介 -->
-      <image src="/images/icon2.png"></image>
-      {{job4['title']}}
-    </view>
-    <!-- 工作类型 -->
-    <view class="type">
-      <view class="time">
-        {{job4['type']}} | {{job4['time']}} | {{job4['sex']}}
-      </view>
-      <view class="salary">
-          {{job4['salary']}}
-      </view>
-      </view>
-      <!-- 分割线 -->
-      <view class="border"></view>
-  </view>
-<view class="work">
-    <view>
-      <!-- 工作简介 -->
-      <image src="/images/icon1.png"></image>
-      {{job3['title']}}
-    </view>
-    <!-- 工作类型 -->
-    <view class="type">
-      <view class="time">
-        {{job3['type']}} | {{job3['time']}} | {{job3['sex']}}
-      </view>
-      <view class="salary">
-          {{job3['salary']}}
-      </view>
-      </view>
-      <!-- 分割线 -->
-      <view class="border"></view>
-  </view>
-    <view class="work">
-    <view>
-      <!-- 工作简介 -->
-      <image src="/images/icon4.png"></image>
-      {{job2['title']}}
-    </view>
-    <!-- 工作类型 -->
-    <view class="type">
-      <view class="time">
-        {{job2['type']}} | {{job2['time']}} | {{job2['sex']}}
-      </view>
-      <view class="salary">
-          {{job2['salary']}}
-      </view>
-      </view>
-      <!-- 分割线 -->
-      <view class="border"></view>
-  </view>
- <view class="work">
-    <view>
-      <!-- 工作简介 -->
-      <image src="/images/icon1.png"></image>
-      {{job1['title']}}
-    </view>
-    <!-- 工作类型 -->
-    <view class="type">
-      <view class="time">
-        {{job1['type']}} | {{job1['time']}} | {{job1['sex']}}
-      </view>
-      <view class="salary">
-          {{job1['salary']}}
-      </view>
-      </view>
-      <!-- 分割线 -->
-      <view class="border"></view>
-  </view> 
+  
+  
 </view>

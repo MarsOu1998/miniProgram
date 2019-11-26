@@ -3,12 +3,7 @@ const app = getApp()
 const db = wx.cloud.database();
 const admin = db.collection('user');//数据库里面集合名字
 var total;//当前工作数量
-// 用来动态存放数据库中最后五个工作内容
-var job1;
-var job2;
-var job3;
-var job4;
-var job5;
+var result;//存放返回的5个工作内容
 var title;
 Page({
   /**
@@ -43,12 +38,9 @@ Page({
         username: app.globalData.userNameGlobal
       },
       success:res=>{
-        app.globalData.nickName = res.result.data[0].nickname;
-        app.globalData.sign = res.result.data[0].sign;
-        app.globalData.tel = res.result.data[0].telphone;
-        app.globalData.id123 = res.result.data[0]._id;
-        app.globalData.imageId = res.result.data[0].touxiang;
-        app.globalData.bflag=res.result.data[0].shangjia;
+        app.globalData.accountInfo=res.result.data[0];
+        console.log("当前用户的账号信息已存入全局变量,信息如下:");
+        console.log(app.globalData.accountInfo);
       },
       fail:res=>{
         console.log("进入主页后数据查询失败");
@@ -69,13 +61,10 @@ Page({
           success: res => {
             console.log("当前工作数量:" + total);
             console.log("获取最后五条工作记录如下:");
-            console.log(res.result);
+            result=res.result.data;
+            console.log(result);
             this.setData({
-              job1 : res.result.data[0],
-              job2 : res.result.data[1],
-              job3 : res.result.data[2],
-              job4 : res.result.data[3],
-              job5 : res.result.data[4],
+              result:result.reverse()
             })
             app.globalData.job1 = res.result.data[0];
             app.globalData.job2 = res.result.data[1];
@@ -133,11 +122,36 @@ Page({
     
   },
   //跳转到工作页面
-  work1:function(){
+  0:function(){
+    app.globalData.job = app.globalData.job1;
+    wx.navigateTo({
+      url: '/pages/work1/work1',
+    })
+  },
+  1: function () {
+    app.globalData.job = app.globalData.job2;
+    wx.navigateTo({
+      url: '/pages/work1/work1',
+    })
+  },
+  2: function () {
+    app.globalData.job = app.globalData.job3;
+    wx.navigateTo({
+      url: '/pages/work1/work1',
+    })
+  },
+  3: function () {
+    app.globalData.job = app.globalData.job4;
+    wx.navigateTo({
+      url: '/pages/work1/work1',
+    })
+  },
+  4: function () {
     app.globalData.job = app.globalData.job5;
     wx.navigateTo({
       url: '/pages/work1/work1',
     })
   },
+
 
 })

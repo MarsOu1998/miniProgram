@@ -8,18 +8,19 @@ exports.main = async (event, context) => {
   try {
     //order
     return await db.collection('job').add({
-      // data 字段表示需新增的 JSON 数据
       data: {
-       account:event.account,
-       title:event.title,
-       time: event.time,
-       sex: event.sex,
-       type:event.type,
+        account: event.account,//发布者账号
+        title:event.title,//工作标题
+        time: event.time,
+        sex: event.sex,
+        type:event.type,
         salary: event.salary,
         content: event.content,
         place: event.place,
         phone: event.phone,
-        job:'1'
+        job:'1',
+        nickname:event.nickname,//商家店铺名字
+        creditScore:event.creditScore//商家信用分
       },
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

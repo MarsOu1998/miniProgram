@@ -1,5 +1,7 @@
 var app=getApp();
-var job;
+var job;//从全局变量中获取当前工作信息
+var accountInfo;//从全局变量中获取当前账号信息
+
 Page({
 
   /**
@@ -13,10 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      job: app.globalData.job
-    })
-      console.log(job);
+    
   },
 
   /**
@@ -30,7 +29,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.setData({
+      job: app.globalData.job,
+      accountInfo: app.globalData.accountInfo
+    })
   },
 
   /**
@@ -66,6 +68,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  shoucang:function(){
+    //先获取当前用户已收藏的工作id,把当前工作的_id以数组的形式存入用户的账号中
+    
+    var shoucang=app.globalData.accountInfo['shoucang'];
+    console.log("当前用户收藏的工作有:");
+    console.log(shoucang);
+    console.log("当前工作id："+app.globalData.job['_id']);
+    shoucang.push(app.globalData.job['_id']);
+    console.log("当前工作添入数组后：");
+    console.log(shoucang);
+    wx.cloud.callFunction({
+      name:'updateInfo',
+      data:{
+        shoucang:shoucang
+      },
+      success:res=>{
+        wx.showToast({
+          title: '收藏成功',
+        })
+      }
+    })
   }
 
 })

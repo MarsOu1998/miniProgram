@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 180rpx;
+  margin-left: 400rpx;
 }
 
 .like image{

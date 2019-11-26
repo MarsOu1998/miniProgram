@@ -2,6 +2,7 @@ var date=require('../../utils/util.js');
 
 // pages/mine/mine.js
 const app=getApp();
+var accountInfo;//把全局变量中当前用户信息转存入此页面
 var nickname;//昵称
 var sign;//签名
 var tel;//电话
@@ -39,20 +40,19 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    var that=this;
+    //全局变量——账号信息转存入此页面
+    accountInfo = app.globalData.accountInfo
+    //更新前端页面数据
+    that.setData({
+      accountInfo:app.globalData.accountInfo
+    })
+    console.log("全局变量——账号信息已转存入此页面：");
+    console.log(accountInfo);
     time=date.formatTime(new Date());
     console.log("现在的时间是:"+time);
-    console.log(app.globalData.userNameGlobal);
-    console.log("nicknam"+app.globalData.nickName);
-    console.log("当前头像地址:" + app.globalData.imageId);
-    this.setData({
-      nickname : app.globalData.nickName,
-      sign: app.globalData.sign,
-      tel: app.globalData.tel,
-      touxiang:app.globalData.touxiang,
-      fileId: app.globalData.imageId
-    }),
-      console.log("idname:" + app.globalData.id123);
-    
+    console.log("当前用户昵称:" + accountInfo['nickname']);
+    console.log("当前头像地址:" + accountInfo['touxiang']);
   },
 
   /**
@@ -120,28 +120,28 @@ Page({
     wx.cloud.callFunction({
       name:'login1',
       data:{
-        username: app.globalData.userNameGlobal
+        username: accountInfo['account']
       },
       success:res=>{
-        oldTouxiang=res.result.data[0].touxiang;
+        oldTouxiang=accountInfo['touxiang'];
         wx.cloud.uploadFile({
-          cloudPath: 'touxiang/' + app.globalData.id123 + time,
+          cloudPath: 'touxiang/' + accountInfo['_id'] + time,
           filePath: imgurl,
           success(res) {
             console.log('头像上传成功')
-            console.log("当前用户_ID" + app.globalData.id123)
+            console.log("当前用户_ID" + accountInfo['_id'])
             console.log(res),
-              app.globalData.imageId = res.fileID,
+              accountInfo['touxiang'] = res.fileID,
               //调用云函数更新头像地址
               wx.cloud.callFunction({
                 name: 'updateInfo',
                 data: {
-                  _id: app.globalData.id123,
-                  touxiang1: app.globalData.imageId
+                  _id: accountInfo['_id'],
+                  touxiang1: accountInfo['touxiang']
                 },
                 success: res => {
                   console.log('更新数据成功')
-                  fileID: app.globalData.imageId
+                  fileID: accountInfo['touxiang']
                 },
                 fail: res => {
                   console.log('更新数据失败')
@@ -205,7 +205,7 @@ Page({
     })
   },
   qiehuan: function () {
-    if (app.globalData.bflag==0){
+    if (app.globalData.accountInfo['shangjia']==0){
       wx.showToast({
         title: '您不是商家，请注册商家账户',
         icon:'none'

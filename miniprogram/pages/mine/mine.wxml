@@ -3,20 +3,20 @@
 <view class="head" >
   <!-- 头像 -->
   <view class="touxiang" bindtap="changeImage">
-    <image src="{{fileId}}"></image>
+    <image src="{{accountInfo['touxiang']}}"></image>
   </view>
   <!-- 用户名与个性签名 -->
   <view class="head2" bindtap="information">
     <!-- 用户名 -->
     <view class="head2Name">
-      {{nickname}}
+      {{accountInfo['nickname']}}
     </view>
     <!-- 个性签名 -->
     <view class="head2Sign">
-      {{sign}}
+      {{accountInfo['sign']}}
     </view>
     <view class="head2Tel">
-      {{tel}}
+      {{accountInfo['telphone']}}
     </view>
   </view>
   <!-- 进入图标 -->

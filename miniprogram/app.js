@@ -16,14 +16,9 @@ App({
     }
 
     this.globalData = {
-     
-      userNameGlobal:"用户名加载中....",
-      nickName:"用户昵称加载中....",
-      sign:"用户签名加载中....",
-      tel:"用户手机号加载中....",
-      touxiang:"",
-      id123:"", //数据库自动分配的_id
-      bflag:"",//是否为商家
+      accountInfo:"",
+      //从登录页面或注册页面输入的账号，便于进入首页后从数据库中查找账号信息
+      userNameGlobal:"",
       //存放首页中显示的5个最新工作
       job:"",
       job1:"",

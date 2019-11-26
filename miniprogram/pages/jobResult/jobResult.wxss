@@ -8,3 +8,10 @@
   padding-right: 20rpx;
   margin-top: 30rpx;
 }
+/* 工作分割线 */
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+ margin-top: 30rpx;
+}
