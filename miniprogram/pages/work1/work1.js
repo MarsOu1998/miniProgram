@@ -1,7 +1,7 @@
 var app=getApp();
 var job;//从全局变量中获取当前工作信息
 var accountInfo;//从全局变量中获取当前账号信息
-
+var shoucang={};//获取当前数据库中已收藏的工作id
 Page({
 
   /**
@@ -72,7 +72,7 @@ Page({
   shoucang:function(){
     //先获取当前用户已收藏的工作id,把当前工作的_id以数组的形式存入用户的账号中
     
-    var shoucang=app.globalData.accountInfo['shoucang'];
+    shoucang=app.globalData.accountInfo['shoucang'];
     console.log("当前用户收藏的工作有:");
     console.log(shoucang);
     console.log("当前工作id："+app.globalData.job['_id']);
@@ -83,7 +83,10 @@ Page({
       name:'updateInfo',
       data:{
         _id:app.globalData.accountInfo['account'],
-        shoucang:"1"
+        shoucang:[
+          "1",
+          "2"
+        ]
       },
       success:res=>{
         console.log(res)
