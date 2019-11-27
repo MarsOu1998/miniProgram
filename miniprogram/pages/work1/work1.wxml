@@ -15,9 +15,17 @@
         </view>
     </view>
     <!-- 收藏到我喜欢 -->
-    <view class="like" bindtap="shoucang">
-      <image src="/images/xihuan.png"></image>
+    <view wx:if="{{like==true}}">
+      <view class="like" bindtap="shoucang">
+        <image src="/images/xihuaned.png"></image>
+      </view>
     </view>
+    <view wx:else>
+        <view class="like" bindtap="shoucang">
+        <image src="/images/xihuan.png"></image>
+      </view>
+    </view>
+    
   </view>
   <!-- 分割线 -->
   <view class="border"></view>
@@ -56,7 +64,7 @@
       </view>
       <!-- 兼职信息 -->
       <view>
-        工作内容:{{job['content']}}
+        招聘类型:{{job['sex']}}
       </view>
       <!-- 兼职地点 -->
       <view>
@@ -65,5 +73,9 @@
       <!-- 联系方式 -->
       联系方式：{{job['phone']}}
     </view>
+  </view>
+  <!-- 点击报名 -->
+  <view>
+    <button type="primary" style="width:80%;margin-top:20rpx;" bindtap="baoming">报名</button>
   </view>
 </view>

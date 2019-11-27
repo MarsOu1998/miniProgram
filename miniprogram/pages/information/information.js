@@ -88,11 +88,13 @@ Page({
         _id: app.globalData.accountInfo['_id'],
         nickname: nickname,
         tel: telphone,
-        sign: sign
+        sign: sign,
+        shoucang:'2'
 
       },
       success: res => {
         console.log('更新数据成功')
+        console.log(res)
         wx.cloud.callFunction({
           name: 'login1',
           data: {

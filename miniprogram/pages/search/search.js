@@ -75,5 +75,41 @@ Page({
     wx.navigateTo({
       url: '/pages/jobResult/jobResult',
     })
+  },
+  student:function(){
+    app.globalData.jobSearch="学生";
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
+    })
+  },
+  jiaqi: function () {
+    app.globalData.jobSearch = "假期";
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
+    })
+  },
+  rijie: function () {
+    app.globalData.jobSearch = "日结";
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
+    })
+  },
+  baojie: function () {
+    app.globalData.jobSearch = "保洁";
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
+    })
+  },
+  linshi: function () {
+    app.globalData.jobSearch = "学生";
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
+    })
+  },
+  fuwuyuan: function () {
+    app.globalData.jobSearch = "服务员";
+    wx.navigateTo({
+      url: '/pages/jobResult/jobResult',
+    })
   }
 })

@@ -82,13 +82,16 @@ Page({
     wx.cloud.callFunction({
       name:'updateInfo',
       data:{
-        shoucang:shoucang
+        _id:app.globalData.accountInfo['account'],
+        shoucang:"1"
       },
       success:res=>{
+        console.log(res)
         wx.showToast({
           title: '收藏成功',
         })
       }
+      
     })
   }
 

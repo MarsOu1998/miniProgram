@@ -34,11 +34,12 @@ Page({
     wx.cloud.callFunction({
       name: 'searchJob',
       data: {
-        query:'面',
+        query:app.globalData.jobSearch,
         count:0
        // query: app.globalData.jobSearch
       },
       success: function (res) {
+        console.log("当前工作关键词为:"+app.globalData.jobSearch);
         console.log("工作搜索结果如下:");
         result=res.result.data;
         console.log(result);
@@ -47,7 +48,7 @@ Page({
         wx.cloud.callFunction({
           name:'searchJob',
           data:{
-            query:'面',
+            query:app.globalData.jobSearch,
             count:count,
             page:app.globalData.page
           },

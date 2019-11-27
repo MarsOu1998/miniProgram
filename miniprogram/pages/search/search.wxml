@@ -8,30 +8,29 @@
 
 <view class="wholeHot">
 
-<view class="student"> 
+<view class="student" bindtap="student"> 
 <text>学生</text>
 </view>
 
-<view class="student"> 
+<view class="student" bindtap="student"> 
 <text>假期</text>
 </view>
 
-<view class="student"> 
+<view class="student" bindetap="rijie"> 
 <text>日结</text>
 </view>
 
 </view>
-<view class="wholeHot">
-
+<view class="wholeHot" bindtap="baojie">
 <view class="student"> 
 <text>保洁阿姨</text>
 </view>
 
-<view class="student"> 
+<view class="student" bindtap="linshigong"> 
 <text>临时工</text>
 </view>
 
-<view class="student"> 
+<view class="student" bindtap="fuwuyuan"> 
 <text>服务员</text>
 </view>
 
