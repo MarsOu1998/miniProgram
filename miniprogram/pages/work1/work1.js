@@ -2,6 +2,7 @@ var app=getApp();
 var job;//从全局变量中获取当前工作信息
 var accountInfo;//从全局变量中获取当前账号信息
 var shoucang={};//获取当前数据库中已收藏的工作id
+var like=false;//用于通知前端页面进行收藏图片切换
 Page({
 
   /**
@@ -29,10 +30,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    like=false;
+    //console.log("当前like的值："+like);
     this.setData({
       job: app.globalData.job,
-      accountInfo: app.globalData.accountInfo
+      accountInfo: app.globalData.accountInfo,
     })
+    //检测当前数据库中是否已经收藏过此工作，通知前端页面切换图片
+    shoucang = app.globalData.accountInfo['shoucang'];
+    //console.log("当前收藏数组的长度为:"+shoucang.length);
+    for(var i=0;i<shoucang.length;i++){
+      if(app.globalData.job['_id']==shoucang[i]){
+        console.log("此工作已被收藏过");
+        like=true;
+        this.setData({
+          like
+      })
+      }
+    }
+
   },
 
   /**
@@ -70,12 +86,41 @@ Page({
 
   },
   shoucang:function(){
+    console.log("当前like的值:"+like)
+    var that=this;
+    if(like==true){
+    //判断当前工作是否已被收藏过,若是，则取消收藏
+    for(var i=0;i<shoucang.length;i++){
+      if (app.globalData.job['_id'] == shoucang[i]){
+        shoucang.splice(i);//从数组的指定位置中删除元素
+        console.log("以从数组中删除取消收藏工作");
+        console.log("当前收藏如下：");
+        console.log(shoucang);
+        wx.cloud.callFunction({
+          name:'updateInfo',
+          data:{
+            _id: app.globalData.accountInfo['_id'],
+            shoucang: shoucang
+          },
+          success:function(res){
+            wx.showToast({
+              title: '取消收藏',
+            })
+            like=false;
+            that.setData({ like}) 
+          }
+
+        })
+      }
+    }
+  }
+  else{
     //先获取当前用户已收藏的工作id,把当前工作的_id以数组的形式存入用户的账号中
-    
     shoucang=app.globalData.accountInfo['shoucang'];
     console.log("当前用户收藏的工作有:");
     console.log(shoucang);
     console.log("当前工作id："+app.globalData.job['_id']);
+    
     shoucang.push(app.globalData.job['_id']);
     console.log("当前工作添入数组后：");
     console.log(shoucang);
@@ -90,9 +135,13 @@ Page({
         wx.showToast({
           title: '收藏成功',
         })
+        like=true;
+        that.setData({
+          like
+        })
       }
       
     })
   }
-
+}
 })
