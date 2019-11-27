@@ -7,7 +7,7 @@
   </view>
   <view wx:else>
         <view wx:for="{{job}}">
-            {{item[0]['_id']}}
+           
             <view class="work" bindtap="{{index}}">
             <view>
             <!-- 工作简介 -->
