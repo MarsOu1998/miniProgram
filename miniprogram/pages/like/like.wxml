@@ -7,20 +7,20 @@
   </view>
   <view wx:else>
         <view wx:for="{{job}}">
-            {{item['_id']}}
+            {{item[0]['_id']}}
             <view class="work" bindtap="{{index}}">
             <view>
             <!-- 工作简介 -->
             <image src="/images/icon1.png"></image>
-              {{item['title']}}
+              {{item[0]['title']}}
             </view>
             <!-- 工作类型 -->
             <view class="type">
               <view class="time">
-                {{item['type']}} | {{item['time']}} | {{item['sex']}}
+                {{item[0]['type']}} | {{item[0]['time']}} | {{item[0]['sex']}}
               </view>
               <view class="salary">
-                {{item['salary']}}
+                {{item[0]['salary']}}
               </view>
               </view>
               <!-- 分割线 -->

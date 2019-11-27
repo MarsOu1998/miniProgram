@@ -40,8 +40,8 @@ Page({
           _id: app.globalData.accountInfo['shoucang'][i]
         },
         success:function(res){
-          console.log(res.result.event);
-          result = res.result.event;
+          console.log(res.result.data);
+          result = res.result.data;
           job.push(result);
           console.log(job);
           that.setData({
