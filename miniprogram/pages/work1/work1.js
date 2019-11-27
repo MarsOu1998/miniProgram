@@ -82,11 +82,8 @@ Page({
     wx.cloud.callFunction({
       name:'updateInfo',
       data:{
-        _id:app.globalData.accountInfo['account'],
-        shoucang:[
-          "1",
-          "2"
-        ]
+        _id:app.globalData.accountInfo['_id'],
+        shoucang:shoucang
       },
       success:res=>{
         console.log(res)
