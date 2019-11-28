@@ -2,7 +2,10 @@ var app=getApp();
 var result;//存储数据库中返回的结果
 var resultShow;//负责在前端页面上面显示结果集
 var count=0;//统计获取到的工作数量
-var page=1;
+var page=0;
+var indexPage;//首页
+var nextPage;//下一页
+var lastPage;//上一页
 // pages/jobResult/jobResult.js
 Page({
 
@@ -45,6 +48,12 @@ Page({
         console.log(result);
         count=result.length;
         console.log("工作搜索结果数量:"+count);
+        if(count>5){
+          nextPage = true;
+          that.setData({
+            nextPage
+          })
+        }
         wx.cloud.callFunction({
           name:'searchJob',
           data:{

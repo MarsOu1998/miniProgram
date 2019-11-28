@@ -15,3 +15,28 @@
  height: 2rpx;
  margin-top: 30rpx;
 }
+/* 三个页面按钮的样式 */
+.page{
+  display: flex;
+}
+
+/* 下一页样式 */
+.lastPage{
+
+  margin-top: 20rpx;
+  margin-left: 160rpx;
+  color:rgb(132, 185, 245);
+}
+/*首页样式 */
+.indexPage{
+  
+  margin-top: 20rpx;
+  margin-left: 60rpx;
+  color:rgb(132, 185, 245);
+}
+/* 上一页样式 */
+.nextPage{
+  margin-top: 20rpx;
+  margin-left: 80rpx;
+  color:rgb(132, 185, 245);
+}
