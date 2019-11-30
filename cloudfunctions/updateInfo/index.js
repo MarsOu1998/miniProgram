@@ -15,7 +15,11 @@ exports.main = async (event, context) => {
         telphone:event.tel,
         touxiang:event.touxiang1,
         flag:event.flag,
-        shoucang:event.shoucang
+        shoucang:event.shoucang,
+        baoming:event.baoming,
+        luqu:event.luqu,
+        daogang:event.daogang,
+        wancheng:event.wancheng
       }
     })
   } catch (e) {

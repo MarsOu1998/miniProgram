@@ -20,7 +20,7 @@
       </view>
   </view>
   <!-- 如果工作的数量大于5条，在页面上显示下一页 -->
-  <view class="page">
+  <!-- <view class="page">
     <view wx:if="{{lastPage}}" class="lastPage">  
       上一页
     </view>
@@ -29,6 +29,6 @@
     </view>
     <view wx:if="{{nextPage}}" class="nextPage">  
       下一页
-    </view>
-  </view>
+    </view> -->
+  <!-- </view> -->
 </view>

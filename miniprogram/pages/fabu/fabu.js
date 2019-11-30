@@ -128,7 +128,8 @@ Page({
         place:place,
         phone:phone,
         nickname: nickname,
-        creditScore:app.globalData.accountInfo['creditScore']
+        creditScore:app.globalData.accountInfo['creditScore'],
+        _id: app.globalData.accountInfo['_id']
       },
       success:res=>{
         console.log("工作发布成功");

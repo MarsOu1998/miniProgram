@@ -1,11 +1,14 @@
-// pages/baoming/baoming.js
+var app=getApp();
+var empty;
+var result;
+var job=[];//用于前端页面显示
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    empty:true
   },
 
   /**
@@ -26,14 +29,46 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    job = [];
+    console.log(empty)
+    var that = this;
+    for (var i = 0; i < app.globalData.accountInfo['baoming'].length; i++) {
+      wx.cloud.callFunction({
+        name: 'searchJobById',
+        data: {
+          _id: app.globalData.accountInfo['baoming'][i]
+        },
+        success: function (res) {
+          console.log(res.result.data);
+          result = res.result.data;
+          job.push(result);
+          console.log(job);
+          that.setData({
+            job
+          })
+        }
+      })
 
+    }
+    if (app.globalData.accountInfo['baoming'].length != 0) {
+      console.log("当前报名内容不为空");
+      empty = false;
+    }
+    else {
+      console.log("当前报名内容为空");
+      empty = true;
+    }
+    console.log(job);
+    that.setData({
+      empty
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+      
   },
 
   /**

@@ -75,7 +75,7 @@
   <view>
     <!-- 我的收藏 --> 
     <view class="shoucang" bindtap="shoucang">
-      <view style><image src="/images/shoucang.png"></image></view>
+      <view style><image src="/images/xihuan.png"></image></view>
       <view style="margin-left:20rpx;">我的收藏</view> 
       <view style="margin-left:420rpx;"><image src="/images/jinru.png"></image></view>
     </view>

@@ -129,7 +129,13 @@ Page({
                 sign: '个性签名',
                 telphone: '手机号',
                 shangjia:1,
-                creditScore:60
+                creditScore:60,
+                shoucang:[],
+                daogang:[],
+                luqu:[],
+                wancheng:[],
+                baoming:[],
+                shenqing:[]
               }
             })
             wx.showToast({
@@ -152,7 +158,12 @@ Page({
                   touxiang: "cloud://part-time-job-yw301.7061-part-time-job-yw301-1259707559/touxiang/touxiang.jpg",
                   sign: '个性签名',
                   telphone: '手机号',
-                  shangjia: 0
+                  shangjia: 0,
+                  shoucang: [],
+                  daogang: [],
+                  luqu: [],
+                  wancheng: [],
+                  baoming: []
                 }
               })
               wx.showToast({

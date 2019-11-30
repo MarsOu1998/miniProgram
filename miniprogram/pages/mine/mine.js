@@ -40,12 +40,32 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    // 进入首页后获取用户昵称和个性签名
+    wx.cloud.callFunction({
+      name: 'login1',
+      data: {
+        username: app.globalData.userNameGlobal
+      },
+      success: res => {
+        app.globalData.accountInfo = res.result.data[0];
+        console.log("当前用户的账号信息已存入全局变量,信息如下:");
+        console.log(app.globalData.accountInfo);
+      },
+      fail: res => {
+        console.log("进入主页后数据查询失败");
+        console.error;
+      }
+
+    })
+
+
     var that=this;
     //全局变量——账号信息转存入此页面
     accountInfo = app.globalData.accountInfo
     //更新前端页面数据
     that.setData({
-      accountInfo:app.globalData.accountInfo
+      accountInfo:app.globalData.accountInfo,
+      touxiang: accountInfo['touxiang']
     })
     console.log("全局变量——账号信息已转存入此页面：");
     console.log(accountInfo);

@@ -75,7 +75,11 @@
     </view>
   </view>
   <!-- 点击报名 -->
-  <view>
+  <!-- 判断是否已经报名 -->
+  <view wx:if="{{enroll}}">
+      <button type="primary" style="width:80%;margin-top:20rpx;" bindtap="baoming">已报名</button>
+  </view>
+  <view wx:else>
     <button type="primary" style="width:80%;margin-top:20rpx;" bindtap="baoming">报名</button>
   </view>
 </view>

@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
     return await db.collection('job').add({
       data: {
         account: event.account,//发布者账号
+        id:event._id,//发布者id,便于通知商家报名信息
         title:event.title,//工作标题
         time: event.time,
         sex: event.sex,
