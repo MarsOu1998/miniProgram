@@ -13,6 +13,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page:0
   },
 
   /**
@@ -39,7 +40,6 @@ Page({
       data: {
         query:app.globalData.jobSearch,
         count:0
-       // query: app.globalData.jobSearch
       },
       success: function (res) {
         console.log("当前工作关键词为:"+app.globalData.jobSearch);
@@ -59,7 +59,7 @@ Page({
           data:{
             query:app.globalData.jobSearch,
             count:count,
-            page:app.globalData.page
+            page:page
           },
           success:function(res){
             console.log("二次调用云函数查找工作:");
@@ -146,5 +146,8 @@ Page({
     wx.navigateTo({
       url: '/pages/work1/work1',
     })
+  },
+  nextPage:function(){
+    page+=5;
   }
 })

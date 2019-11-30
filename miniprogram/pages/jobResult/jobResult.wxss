@@ -20,23 +20,27 @@
   display: flex;
 }
 
-/* 下一页样式 */
+/* 上一页样式 */
 .lastPage{
-
+  position: absolute;
+  z-index: 1;
   margin-top: 20rpx;
-  margin-left: 160rpx;
+  margin-left: 130rpx;
   color:rgb(132, 185, 245);
 }
 /*首页样式 */
 .indexPage{
-  
+  position: absolute;
+   z-index: 1;
   margin-top: 20rpx;
-  margin-left: 60rpx;
+  margin-left: 330rpx;
   color:rgb(132, 185, 245);
 }
-/* 上一页样式 */
+/* 下一页样式 */
 .nextPage{
+  position: absolute;
+   z-index: 1;
   margin-top: 20rpx;
-  margin-left: 80rpx;
+  margin-left: 500rpx;
   color:rgb(132, 185, 245);
 }

@@ -101,13 +101,14 @@ Page({
     })
   },
   linshi: function () {
-    app.globalData.jobSearch = "学生";
+    app.globalData.jobSearch = "临时工";
     wx.navigateTo({
       url: '/pages/jobResult/jobResult',
     })
   },
   fuwuyuan: function () {
     app.globalData.jobSearch = "服务员";
+    console.log("当前点击关键词:" + app.globalData.jobSearch);
     wx.navigateTo({
       url: '/pages/jobResult/jobResult',
     })
