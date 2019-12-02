@@ -1,0 +1,49 @@
+<!-- swiper部分 -->
+
+<view>
+
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="5000" circular="true">
+
+<swiper-item>
+<navigator url="/pages/indexDetail/indexDetail">
+<image src="/images/daohang.png" class="top-image"/>
+</navigator>
+</swiper-item>
+<swiper-item>
+<navigator url="/pages/indexDetail/indexDetail">
+<image src="/images/daohang.png" class="top-image"/>
+</navigator>
+</swiper-item>
+
+</swiper>
+
+</view>
+<!-- 精选推荐部分 -->
+<view class="recommend">
+  <!-- 精选推荐标题 -->
+  <view class="title">精选推荐</view>
+  <!-- 工作内容 -->
+  <view wx:for="{{result}}">
+        <view class="work" bindtap="{{index}}">
+    <view>
+      <!-- 工作简介 -->
+      <image src="/images/icon1.png"></image>
+      {{item['title']}}
+    </view>
+    <!-- 工作类型 -->
+    <view class="type">
+      <view class="time">
+        {{item['type']}} | {{item['time']}} | {{item['sex']}}
+      </view>
+      <view class="salary">
+          {{item['salary']}}
+      </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="border"></view>
+  </view>
+  </view>
+  <!-- 工作1 -->
+  
+  
+</view>

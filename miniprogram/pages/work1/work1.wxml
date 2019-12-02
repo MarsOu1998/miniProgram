@@ -1,0 +1,85 @@
+<!-- 总体的view -->
+<view class="whole">
+  <!-- 商家信息 -->
+  <view class="title">
+    <!-- 商家名称与信用分 -->
+    <view class="nameScore">
+        <!-- 商家名称 -->
+        <view class="name">
+        <view class="font">商家名称:{{job['nickname']}}</view>
+        <view>发布者:{{job['account']}}</view>
+        </view>
+         <!-- 商家信用 -->
+        <view class="score">
+            <text>商家信用:{{job['creditScore']}}</text> 
+        </view>
+    </view>
+    <!-- 收藏到我喜欢 -->
+    <view wx:if="{{like==true}}">
+      <view class="like" bindtap="shoucang">
+        <image src="/images/xihuaned.png"></image>
+      </view>
+    </view>
+    <view wx:else>
+        <view class="like" bindtap="shoucang">
+        <image src="/images/xihuan.png"></image>
+      </view>
+    </view>
+    
+  </view>
+  <!-- 分割线 -->
+  <view class="border"></view>
+  <!-- 地图导航 -->
+  <view class="mapView">
+    <!-- 地图图片 -->
+    <view class="map">
+      <image src="/images/defaultMap.png"></image>
+    </view>
+  </view>
+  <view class="border"></view>
+  <!-- 兼职内容 -->
+  <view>
+    <!-- 兼职标题与工资 -->
+    <view class="titleSalary">
+      <view>
+        {{job['title']}}
+      </view>
+      <view class="salary">
+        {{job['salary']}}
+      </view>
+    </view>
+    <!-- 兼职内容 -->
+    <view class="time">
+      <!-- 招聘周期 -->
+      <view>
+        招聘周期:{{job['time']}}
+      </view>
+      <!-- 兼职时间 -->
+      <view>
+        工作内容:{{job['content']}}
+      </view>
+      <!-- 结算类型 -->
+      <view>
+        结算类型:{{job['type']}}
+      </view>
+      <!-- 兼职信息 -->
+      <view>
+        招聘类型:{{job['sex']}}
+      </view>
+      <!-- 兼职地点 -->
+      <view>
+        兼职地点：{{job['place']}}
+      </view>
+      <!-- 联系方式 -->
+      联系方式：{{job['phone']}}
+    </view>
+  </view>
+  <!-- 点击报名 -->
+  <!-- 判断是否已经报名 -->
+  <view wx:if="{{enroll}}">
+      <button type="primary" style="width:80%;margin-top:20rpx;" bindtap="baoming">已报名</button>
+  </view>
+  <view wx:else>
+    <button type="primary" style="width:80%;margin-top:20rpx;" bindtap="baoming">报名</button>
+  </view>
+</view>

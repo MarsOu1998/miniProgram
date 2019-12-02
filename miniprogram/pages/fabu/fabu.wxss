@@ -1,0 +1,9 @@
+page{
+  background-color: white;
+}
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+ margin-top: 20rpx;
+}
