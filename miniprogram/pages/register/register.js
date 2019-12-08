@@ -135,7 +135,8 @@ Page({
                 luqu:[],
                 wancheng:[],
                 baoming:[],
-                shenqing:[]
+                shenqing:[],
+                fabu:[]
               }
             })
             wx.showToast({

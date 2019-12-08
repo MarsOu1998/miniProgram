@@ -1,15 +1,13 @@
-var businessName;//商家名字
-var app=getApp();//获取全局变量
-
-
-// pages/qiehuan/qiehuan.js
+var app=getApp();
+var fabu=[];//获取当前用户已发布的工作id
+var job=[];
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
@@ -30,10 +28,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      businessName: app.globalData.nickName
-    })
-    console.log("商家名称:"+businessName);
+    var that=this;
+    fabu=app.globalData.accountInfo['fabu'];
+    console.log("目前此账号已发布工作id如下:");
+    console.log(fabu);
+    for(var i=0;i<fabu.length;i++){
+      wx.cloud.callFunction({
+        name: 'searchJobById',
+        data:{
+          _id:fabu[i]
+        },
+        success:function(res){
+          console.log(res.result.data);
+          job.push(res.result.data[0]);
+          that.setData({
+            job
+          })
+        }
+      })
+    }
+    
   },
 
   /**
@@ -69,26 +83,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 发布工作
-  fabu:function(){
-    wx.navigateTo({
-      url: '/pages/fabu/fabu',
-    })
-  },
-  shenqing:function(){
-    wx.navigateTo({
-      url: '/pages/shenqing/shenqing',
-    })
-  },
-  chexiao:function(){
-    wx.navigateTo({
-      url: '/pages/chexiao/chexiao',
-    })
-  },
-  jiesuan: function () {
-    wx.navigateTo({
-      url: '/pages/jiesuan/jiesuan',
-    })
   }
 })

@@ -18,8 +18,10 @@
     "pages/luqu/luqu",
     "pages/daogang/daogang",
     "pages/wancheng/wancheng",
-    "pages/jobResult/jobResult"
-    
+    "pages/jobResult/jobResult",
+    "pages/shenqing/shenqing",
+    "pages/chexiao/chexiao",
+    "pages/jiesuan/jiesuan"
     
   ],
   "window": {

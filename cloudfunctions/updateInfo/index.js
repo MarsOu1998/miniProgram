@@ -19,7 +19,9 @@ exports.main = async (event, context) => {
         baoming:event.baoming,
         luqu:event.luqu,
         daogang:event.daogang,
-        wancheng:event.wancheng
+        wancheng:event.wancheng,
+        fabu:event.fabu
+
       }
     })
   } catch (e) {

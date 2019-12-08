@@ -9,6 +9,7 @@ var place;
 var phone;
 var nickname;//存放输入的店名
 var shenqing=[];
+var fabu=[];
 
 // pages/fabu/fabu.js
 Page({
@@ -38,7 +39,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    fabu=app.globalData.accountInfo['fabu'];
   },
 
   /**
@@ -135,9 +136,19 @@ Page({
       },
       success:res=>{
         console.log("工作发布成功");
-        wx.redirectTo({
-          url: '/pages/qiehuan/qiehuan',
+        console.log("工作的_id为：");
+        console.log();
+        fabu.push(res.result['_id']);
+        wx.cloud.callFunction({
+          name:'updateInfo',
+          data:{
+            _id:app.globalData.accountInfo['_id'],
+            fabu:fabu
+          }
         })
+        // wx.redirectTo({
+        //   url: '/pages/qiehuan/qiehuan',
+        // })
       },
       fail:res=>{
         console.log("工作发布失败");

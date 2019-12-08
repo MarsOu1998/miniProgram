@@ -14,7 +14,7 @@
            工作发布
         </view>
       </view>
-      <view class="shenqing">
+      <view class="shenqing" bindtap="shenqing">
         <view>
           <image src="/images/shenqing.png"></image>
         </view>
@@ -24,7 +24,7 @@
       </view>
     </view>
     <view class="function2">
-      <view class="chexiao">
+      <view class="chexiao" bindtap="chexiao">
         <view>
            <image src="/images/chexiao.png"></image>
         </view>
@@ -32,7 +32,7 @@
           工作撤销
         </view>
       </view>
-      <view class="jiesuan">
+      <view class="jiesuan" bindtap="jiesuan">
       <view>
         <image src="/images/jiesuan.png"></image>
       </view>

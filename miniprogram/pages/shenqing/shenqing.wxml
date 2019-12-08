@@ -1,0 +1,25 @@
+<view>
+  <view>
+    您发布的工作：
+  </view>
+  <view wx:for="{{job}}">
+        <view class="work" bindtap="{{index}}">
+    <view>
+      <!-- 工作简介 -->
+      <image src="/images/icon1.png"></image>
+      {{item['title']}}
+    </view>
+    <!-- 工作类型 -->
+    <view class="type">
+      <view class="time">
+        {{item['type']}} | {{item['time']}} | {{item['sex']}}
+      </view>
+      <view class="salary">
+          {{item['salary']}}
+      </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="border"></view>
+  </view>
+  </view>
+</view>

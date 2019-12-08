@@ -1,15 +1,11 @@
-var businessName;//商家名字
-var app=getApp();//获取全局变量
-
-
-// pages/qiehuan/qiehuan.js
+// pages/jiesuan/jiesuan.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
@@ -30,10 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      businessName: app.globalData.nickName
-    })
-    console.log("商家名称:"+businessName);
+
   },
 
   /**
@@ -69,26 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 发布工作
-  fabu:function(){
-    wx.navigateTo({
-      url: '/pages/fabu/fabu',
-    })
-  },
-  shenqing:function(){
-    wx.navigateTo({
-      url: '/pages/shenqing/shenqing',
-    })
-  },
-  chexiao:function(){
-    wx.navigateTo({
-      url: '/pages/chexiao/chexiao',
-    })
-  },
-  jiesuan: function () {
-    wx.navigateTo({
-      url: '/pages/jiesuan/jiesuan',
-    })
   }
 })
