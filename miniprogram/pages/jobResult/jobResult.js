@@ -34,6 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
     var that=this;
     wx.cloud.callFunction({
       name: 'searchJob',
@@ -54,6 +55,19 @@ Page({
             nextPage
           })
         }
+        if(page>=5){
+          lastPage=true;
+          that.setData({
+            lastPage
+          })
+        }
+        if(nextPage){
+          indexPage=true;
+          that.setData({
+            indexPage
+          })
+        }
+        
         wx.cloud.callFunction({
           name:'searchJob',
           data:{
@@ -147,7 +161,104 @@ Page({
       url: '/pages/work1/work1',
     })
   },
-  nextPage:function(){
-    page+=5;
+  next:function(){
+    var that=this;
+    if (page <= count){
+      if(count-page<5){
+        page=count;
+      }else{
+        page+=5;
+      }
+    }
+    if(page>=5){
+      lastPage=true;
+      console.log("lastPage:" + lastPage);
+    }
+    that.setData({
+      lastPage,
+      page
+    })
+    console.log("page:"+page);
+    console.log("count:"+count);
+    wx.cloud.callFunction({
+      name:'searchJob',
+      data:{
+        query: app.globalData.jobSearch,
+        count: count,
+        page: page
+      },
+      success:function(res){
+        result = res.result.data;
+        console.log(result);
+        //把当前结果存入全局变量，便于页面切换也不会丢失结果
+        app.globalData.job1 = result[0];
+        app.globalData.job2 = result[1];
+        app.globalData.job3 = result[2];
+        app.globalData.job4 = result[3];
+        app.globalData.job5 = result[4]; that.setData({
+          result
+        })
+      }
+    })
+  },
+  last:function(){
+    var that = this;
+    if(page>0){
+      page-=5;
+    }
+    if(page<0){
+      page=0;
+    }
+    this.setData({
+      page
+    })
+    wx.cloud.callFunction({
+      name: 'searchJob',
+      data: {
+        query: app.globalData.jobSearch,
+        count: count,
+        page: page
+      },
+      success: function (res) {
+        result = res.result.data;
+        console.log(result);
+        //把当前结果存入全局变量，便于页面切换也不会丢失结果
+        app.globalData.job1 = result[0];
+        app.globalData.job2 = result[1];
+        app.globalData.job3 = result[2];
+        app.globalData.job4 = result[3];
+        app.globalData.job5 = result[4]; that.setData({
+          result
+        })
+      }
+    })
+  },
+  first:function(){
+    var that=this;
+    page=0;
+    this.setData({
+      page
+    })
+    wx.cloud.callFunction({
+      name: 'searchJob',
+      data: {
+        query: app.globalData.jobSearch,
+        count: count,
+        page: page
+      },
+      success: function (res) {
+        result = res.result.data;
+        console.log(result);
+        //把当前结果存入全局变量，便于页面切换也不会丢失结果
+        app.globalData.job1 = result[0];
+        app.globalData.job2 = result[1];
+        app.globalData.job3 = result[2];
+        app.globalData.job4 = result[3];
+        app.globalData.job5 = result[4]; that.setData({
+          result
+        })
+      }
+    })
+
   }
 })

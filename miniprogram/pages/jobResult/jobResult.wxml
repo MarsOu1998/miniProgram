@@ -20,15 +20,15 @@
       </view>
   </view>
   <!-- 如果工作的数量大于5条，在页面上显示下一页 -->
-  <!-- <view class="page">
-    <view wx:if="{{lastPage}}" class="lastPage">  
+  <view class="page">
+    <view wx:if="{{lastPage}}" class="lastPage" bindtap="last">  
       上一页
     </view>
-    <view wx:if="{{indexPage}}" class="indexPage">  
+    <view wx:if="{{indexPage}}" class="indexPage" bindtap="first">  
       首页
     </view>
-    <view wx:if="{{nextPage}}" class="nextPage">  
+    <view wx:if="{{nextPage}}" class="nextPage" bindtap="next">  
       下一页
-    </view> -->
-  <!-- </view> -->
+    </view>
+  </view>
 </view>
