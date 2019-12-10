@@ -55,12 +55,7 @@ Page({
             nextPage
           })
         }
-        if(page>=5){
-          lastPage=true;
-          that.setData({
-            lastPage
-          })
-        }
+        
         if(nextPage){
           indexPage=true;
           that.setData({
