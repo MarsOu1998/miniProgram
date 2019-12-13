@@ -145,7 +145,7 @@ Page({
   next: function () {
     var that = this;
     lastPage=true;
-    if (count - page > 5){
+    
     if (page <= count) {
       if (count - page < 5) {
         page = count;
@@ -183,7 +183,7 @@ Page({
         })
       }
     })
-    }
+    
   },
   last: function () {
     var that = this;

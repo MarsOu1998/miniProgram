@@ -1,8 +1,29 @@
 <view>
-  <view>
-    此工作申请者
+  <view wx:if="{{empty}}">
+    <view class="null">
+      <image src="/images/null.png"></image>
+    </view>
   </view>
-  <view>
-    
+  <view wx:else>
+    <view>
+      此工作申请者:
+    </view>
+    <view wx:for="{{user}}">
+      <!-- 用户信息 -->
+      <view>
+        <view>
+        姓名:{{item['nickname']}}
+        </view>
+        <view>
+        手机号码:{{item['telphone']}}
+        </view>
+        <view class="agree" style="display:flex">
+          <button type="primary" style="width:40%" bindtap="agree">同意</button>
+          <button type="warn" style="width:40%" bindtap="disagree">拒绝</button>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="border"></view>
+    </view>
   </view>
 </view>
