@@ -21,7 +21,8 @@
     "pages/jobResult/jobResult",
     "pages/shenqing/shenqing",
     "pages/chexiao/chexiao",
-    "pages/jiesuan/jiesuan"
+    "pages/jiesuan/jiesuan",
+    "pages/shenqingzhe/shenqingzhe"
     
   ],
   "window": {

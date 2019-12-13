@@ -2,7 +2,8 @@
   <view>
     您发布的工作：
   </view>
-  <view wx:for="{{job}}">
+ 
+  <view wx:for="{{result}}">
         <view class="work" bindtap="{{index}}">
     <view>
       <!-- 工作简介 -->
