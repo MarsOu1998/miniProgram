@@ -143,11 +143,17 @@ Page({
 
   },
   agree:function(event){
+    var that=this;
     var id = event.currentTarget.dataset.id;
     console.log("当前点击第"+id+"个按钮");
-    console.log("当前数组中第"+id+"个账号为:"+user[id]);
+    console.log("当前数组中第"+id+"个账号为:"+user[id]['_id']);
+    user.splice(id,1);
+    that.setData({
+      user
+    })
     console.log(baoming)
     console.log(job['_id'])
+    //查找用户数组baoming中当前工作的id，将其删除，准备录取该用户，在用户的luqu字段中新增此工作
     for(var i=0;i<baoming.length;i++){
       if (baoming[i] == job['_id']){
         baoming.splice(i,1);
@@ -174,6 +180,7 @@ Page({
             break;
           }
         }
+        
         console.log("申请数组已删除当前用户id");
         console.log(shenqing)
         console.log("当前工作id为" + job['_id']);
@@ -191,9 +198,37 @@ Page({
     })
   },
   disagree:function(event){
+    var that=this;
+    console.log(user);
     var id = event.currentTarget.dataset.id;
     console.log("当前点击第" + id + "个按钮");
     console.log("当前数组中第" + id + "个账号为:" + user[id]['_id']);
+    user.splice(id,1);
+    var sq = [];//暂时存储删除用户id后user数组
+    console.log(user)//把user打印出来看看
+    if(user.length==0){
+      sq=[];//防止找不到空数组中的键名而报错
+    }
+    else{
+      for (var i = 0; i < user[i]['_id']; i++) {
+        sq.push(user[i]['_id']);
+      }
+    }
+    that.setData({
+      user
+    })
+   
+    wx.cloud.callFunction({
+      name:'updateBusInfo',
+      data:
+      {
+        _id:job['_id'],
+        shenqing:sq
+      },
+      success:function(res){
+        console.log("已拒绝该用户的申请，已从job数据库中删除此申请者。")
+      }
+    })
   },
   next:function(){
     user=[]
