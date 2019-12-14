@@ -147,6 +147,7 @@ Page({
     var id = event.currentTarget.dataset.id;
     console.log("当前点击第"+id+"个按钮");
     console.log("当前数组中第"+id+"个账号为:"+user[id]['_id']);
+    var del = user[id]['_id'];//暂时保存被删除的内容
     user.splice(id,1);
     that.setData({
       user
@@ -164,7 +165,7 @@ Page({
     wx.cloud.callFunction({
       name:'updateInfo',
       data:{
-        _id: user[0]['_id'],
+        _id: del,
         baoming:baoming,
         luqu:luqu
       },
@@ -174,7 +175,7 @@ Page({
         console.log("此工作目前申请情况");
         console.log(shenqing);
         for(var i=0;i<shenqing.length;i++){
-          if (shenqing[i] == user[0]['_id'])
+          if (shenqing[i] == del)
           {
             shenqing.splice(i,1);
             break;

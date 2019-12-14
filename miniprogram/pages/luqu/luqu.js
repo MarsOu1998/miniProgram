@@ -30,6 +30,7 @@ Page({
    */
   onShow: function () {
     var that=this;
+    
     job=[];//防止每次刷新页面都把重复的工作放入数组
       luqu=app.globalData.accountInfo['luqu'];
       console.log("当前用户被录取的工作有:");
@@ -92,5 +93,6 @@ Page({
   arrive:function(event){
     var id=event.currentTarget.dataset.id;
     console.log("当前点击页面上的第"+id+"条");
+
   }
 })
