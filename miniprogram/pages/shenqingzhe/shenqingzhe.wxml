@@ -18,12 +18,24 @@
         手机号码:{{item['telphone']}}
         </view>
         <view class="agree" style="display:flex">
-          <button type="primary" style="width:40%" bindtap="agree">同意</button>
-          <button type="warn" style="width:40%" bindtap="disagree">拒绝</button>
+          <button type="primary" style="width:40%" bindtap="agree" data-id="{{index}}">同意</button>
+          <button type="warn" style="width:40%" bindtap="disagree" data-id="{{index}}">拒绝</button>
         </view>
       </view>
       <!-- 分割线 -->
       <view class="border"></view>
+    </view>
+  </view>
+   <!-- 如果工作的数量大于5条，在页面上显示下一页 -->
+  <view class="page">
+    <view wx:if="{{lastPage}}" class="lastPage" bindtap="last">  
+      上一页
+    </view>
+    <view wx:if="{{indexPage}}" class="indexPage" bindtap="first">  
+      首页
+    </view>
+    <view wx:if="{{nextPage}}" class="nextPage" bindtap="next">  
+      下一页
     </view>
   </view>
 </view>

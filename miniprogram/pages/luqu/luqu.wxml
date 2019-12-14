@@ -6,7 +6,7 @@
   </view>
   <view wx:else>
     <view wx:for="{{job}}">
-      <view class="work" bindtap="{{index}}">
+      <view class="work"  bindtap="{{index}}">
           <view>
           <!-- 工作简介 -->
           <image src="/images/icon1.png"></image>
@@ -21,6 +21,9 @@
               {{item['salary']}}
           </view>
           </view>
+            <view>
+              <button  type="primary" bindtap="arrive" style="width:60%" data-id="{{index}}">已到岗</button>
+            </view>
           <!-- 分割线 -->
           <view class="border"></view>
       </view>
