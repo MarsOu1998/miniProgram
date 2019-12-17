@@ -35,7 +35,6 @@ Page({
    */
   onShow: function () {
     result=[];
-    
     var that=this;
     fabu=app.globalData.accountInfo['fabu'];
     count = fabu.length;

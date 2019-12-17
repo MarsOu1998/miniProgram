@@ -23,7 +23,7 @@
           </view>
             <view>
               <button  type="primary" bindtap="arrive" style="width:60%" data-id="{{index}}">已到岗</button>
-            </view>
+            </view> 
           <!-- 分割线 -->
           <view class="border"></view>
       </view>

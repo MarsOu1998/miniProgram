@@ -1,1 +1,81 @@
-/* pages/jiesuan/jiesuan.wxss */
+
+.top-image {
+  width:100%;
+  height: 340rpx; 
+}
+/* 推荐部分 */
+.recommend{
+  background-color: white;
+  margin-top: 20rpx;
+}
+
+/* 精选推荐标题 */
+.title{
+  font-weight: bold;
+  padding-left: 30rpx;
+}
+/* 精选工作部分 */
+.work{
+  padding-left:30rpx;
+  height: 200rpx;
+}
+.work image{
+  height: 50rpx;
+  width: 50rpx;
+  padding-right: 20rpx;
+  margin-top: 30rpx;
+}
+/* 工作类型：日结、长期、工资集合 */
+.type{
+  display: flex;
+  padding-left: 80rpx;
+  padding-top: 20rpx;
+}
+/* 工作类型设置 */
+.time{
+  color: gray;
+  
+}
+/* 工作工资设置 */
+.salary{
+  color: red;
+  margin-left: 80rpx;
+}
+
+/* 工作分割线 */
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+ margin-top: 30rpx;
+}
+
+/* 三个页面按钮的样式 */
+.page{
+  display: flex;
+}
+
+/* 上一页样式 */
+.lastPage{
+  position: absolute;
+  z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 130rpx;
+  color:rgb(132, 185, 245);
+}
+/*首页样式 */
+.indexPage{
+  position: absolute;
+   z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 330rpx;
+  color:rgb(132, 185, 245);
+}
+/* 下一页样式 */
+.nextPage{
+  position: absolute;
+   z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 500rpx;
+  color:rgb(132, 185, 245);
+}

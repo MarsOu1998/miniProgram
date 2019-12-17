@@ -1,6 +1,8 @@
 var app=getApp();
+var empty;
 var luqu;//获取当前用户已被录取的工作id
 var job=[];//用于前端页面显示当前用户已被录取的工作
+var daogang;//获取当前用户已到岗的工作
 // pages/luqu/luqu.js
 Page({
 
@@ -30,11 +32,20 @@ Page({
    */
   onShow: function () {
     var that=this;
-    
+    empty=false;
     job=[];//防止每次刷新页面都把重复的工作放入数组
       luqu=app.globalData.accountInfo['luqu'];
+      daogang = app.globalData.accountInfo['daogang'];
       console.log("当前用户被录取的工作有:");
       console.log(luqu);
+      if(luqu.length==0){
+        empty=true;
+      }
+      that.setData({
+        empty
+      })
+    console.log("当前用户到岗的工作有:");
+    console.log(daogang);
       //逐个从数组中取出工作id，获取其内容并显示在页面上
       if(luqu.length<=5){
       for(var i=0;i<luqu.length;i++){
@@ -48,7 +59,7 @@ Page({
             console.log(res.result.data[0]);
             job.push(res.result.data[0]);
             that.setData({
-              job
+              job,empty
             })
           }
         
@@ -91,8 +102,32 @@ Page({
 
   },
   arrive:function(event){
+    var that=this;
     var id=event.currentTarget.dataset.id;
     console.log("当前点击页面上的第"+id+"条");
-
+    console.log("当前job的id为:" + job[id]['_id']);
+    for(var i=0;i<luqu.length;i++){
+      if(luqu[i]==job[id]['_id']){
+        console.log("当前luqu的id为:" + luqu[i]);
+        daogang.push(luqu[i]);//把当前录取的工作放入到岗字段
+        luqu.splice(i,1);
+        job.splice(id,1);
+        break;
+      }
+    }
+    wx.cloud.callFunction({
+      name:'updateInfo',
+      data:{
+        _id:app.globalData.accountInfo['_id'],
+        luqu:luqu,
+        daogang:daogang
+      },
+      success:function(res){
+        console.log("当前工作id已从用户数据库的录取字段删除，已存入到岗字段，因为用户已到岗。");
+        that.setData({
+          job
+        })
+      }
+    })
   }
 })
