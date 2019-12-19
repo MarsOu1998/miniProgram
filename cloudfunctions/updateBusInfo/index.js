@@ -10,7 +10,8 @@ exports.main = async (event, context) => {
   try {
     return await db.collection("job").doc(event._id).update({
       data: {
-        shenqing:event.shenqing
+        shenqing:event.shenqing,
+        daogang:event.daogang
       }
     })
   } catch (e) {

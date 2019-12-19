@@ -1,7 +1,5 @@
 {
   "pages": [
-
-   
     "pages/login/login",
     "pages/register/register",
     "pages/index/index",
@@ -9,7 +7,6 @@
     "pages/mine/mine",
     "pages/indexDetail/indexDetail",
     "pages/information/information",
-    
     "pages/like/like",
     "pages/suggestion/suggestion",
     "pages/fabu/fabu",
@@ -22,7 +19,8 @@
     "pages/shenqing/shenqing",
     "pages/chexiao/chexiao",
     "pages/jiesuan/jiesuan",
-    "pages/shenqingzhe/shenqingzhe"
+    "pages/shenqingzhe/shenqingzhe",
+    "pages/jiesuanDetial/jiesuanDetial"
     
   ],
   "window": {

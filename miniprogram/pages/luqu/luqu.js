@@ -3,6 +3,7 @@ var empty;
 var luqu;//获取当前用户已被录取的工作id
 var job=[];//用于前端页面显示当前用户已被录取的工作
 var daogang;//获取当前用户已到岗的工作
+var daogangJob;
 // pages/luqu/luqu.js
 Page({
 
@@ -34,6 +35,7 @@ Page({
     var that=this;
     empty=false;
     job=[];//防止每次刷新页面都把重复的工作放入数组
+    daogangJob=[];
       luqu=app.globalData.accountInfo['luqu'];
       daogang = app.globalData.accountInfo['daogang'];
       console.log("当前用户被录取的工作有:");
@@ -106,6 +108,20 @@ Page({
     var id=event.currentTarget.dataset.id;
     console.log("当前点击页面上的第"+id+"条");
     console.log("当前job的id为:" + job[id]['_id']);
+    console.log("当前工作已到岗的人有：");
+    console.log(job[id]['daogang']);
+    daogangJob = job[id]['daogang'];
+    daogangJob.push(app.globalData.accountInfo['_id']);
+    wx.cloud.callFunction({
+      name:'updateBusInfo',
+      data:{
+        _id: job[id]['_id'],
+        daogang: daogangJob
+      }
+    })
+
+
+
     for(var i=0;i<luqu.length;i++){
       if(luqu[i]==job[id]['_id']){
         console.log("当前luqu的id为:" + luqu[i]);

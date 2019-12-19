@@ -4,7 +4,7 @@
   </view>
  
   <view wx:for="{{result}}">
-        <view class="work" bindtap="{{index}}">
+        <view class="work" bindtap="jump" data-id="{{index}}" >
     <view>
       <!-- 工作简介 -->
       <image src="/images/icon1.png"></image>

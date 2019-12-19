@@ -1,6 +1,5 @@
 var app = getApp();
 var fabu = [];//获取当前用户已发布的工作id
-var job = [];
 var count = 0;//统计获取到的工作数量
 var page = 0;
 var indexPage;//首页
@@ -213,5 +212,21 @@ Page({
       }
     })
 
-  }
+  },
+jump:function(event){
+  var id = event.currentTarget.dataset.id;
+  
+  wx.cloud.callFunction({
+    name:'searchJobById',
+    data:{
+      _id:result[id]['_id']
+    },
+    success:function(res){
+      app.globalData.user=res.result.data;
+      wx.navigateTo({
+        url: '/pages/jiesuanDetial/jiesuanDetial'
+      })
+    }
+  })
+}
 })

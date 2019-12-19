@@ -22,7 +22,8 @@ exports.main = async (event, context) => {
         job:'1',
         nickname:event.nickname,//商家店铺名字
         creditScore:event.creditScore,//商家信用分
-        shenqing:event.shenqing
+        shenqing:event.shenqing,
+        daogang:event.daogang//此工作已到岗的人
       },
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
