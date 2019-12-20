@@ -1,0 +1,48 @@
+/* 页面为空时 */
+.null{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.null image{
+  height: 200rpx;
+  width: 200rpx;
+}
+
+
+.agree{
+  margin-left: 50rpx;
+}
+
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+ margin-top: 30rpx;
+}
+
+/* 上一页样式 */
+.lastPage{
+  position: absolute;
+  z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 130rpx;
+  color:rgb(132, 185, 245);
+}
+/*首页样式 */
+.indexPage{
+  position: absolute;
+   z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 330rpx;
+  color:rgb(132, 185, 245);
+}
+/* 下一页样式 */
+.nextPage{
+  position: absolute;
+   z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 500rpx;
+  color:rgb(132, 185, 245);
+}

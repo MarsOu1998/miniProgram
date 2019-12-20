@@ -1,0 +1,46 @@
+.work{
+  padding-left:30rpx;
+  height: 200rpx;
+}
+.work image{
+  height: 50rpx;
+  width: 50rpx;
+  padding-right: 20rpx;
+  margin-top: 30rpx;
+}
+/* 工作分割线 */
+.border{
+ background-color: #E0E3DA;
+ width: 100%;
+ height: 2rpx;
+ margin-top: 30rpx;
+}
+/* 三个页面按钮的样式 */
+.page{
+  display: flex;
+}
+
+/* 上一页样式 */
+.lastPage{
+  position: absolute;
+  z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 130rpx;
+  color:rgb(132, 185, 245);
+}
+/*首页样式 */
+.indexPage{
+  position: absolute;
+   z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 330rpx;
+  color:rgb(132, 185, 245);
+}
+/* 下一页样式 */
+.nextPage{
+  position: absolute;
+   z-index: 1;
+  margin-top: 20rpx;
+  margin-left: 500rpx;
+  color:rgb(132, 185, 245);
+}

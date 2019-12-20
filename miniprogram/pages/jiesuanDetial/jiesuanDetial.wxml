@@ -1,0 +1,29 @@
+<view>
+    <view wx:if="{{empty}}">
+      <view class="null">
+        <image src="/images/null.png"></image>
+    </view>
+  </view>
+  <view wx:else>
+  <view>
+      此工作到岗者:
+    </view>
+    <view wx:for="{{users}}">
+      <!-- 用户信息 -->
+      <view>
+        <view>
+        姓名:{{item['nickname']}}
+        </view>
+        <view>
+        手机号码:{{item['telphone']}}
+        </view>
+        <view class="finish" style="display:flex">
+          <button type="primary" style="width:40%" bindtap="finish" data-id="{{index}}">完结</button>
+        </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="border"></view>
+    
+  </view>
+  </view>
+</view>
