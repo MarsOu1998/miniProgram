@@ -1,0 +1,28 @@
+<view class="whole">
+  <view class="nickname">
+    <view>我的昵称</view>
+    <view>
+      <input bindinput="inputNickName" style="margin-left:120rpx;" placeholder="请输入昵称"></input>
+    </view>
+  </view>
+  
+  <view class="nickname">
+    <view>个性签名</view>
+    <view>
+      <input style="margin-left:120rpx;" placeholder="请输入签名" bindinput="inputSign"></input>
+      
+    </view>
+  </view>
+
+  <!-- 输入手机号 -->
+  <view class="nickname">
+    <view>我的手机</view>
+    <view>
+      <input style="margin-left:120rpx;" placeholder="请输入手机号" bindinput="inputTel"></input>
+    </view>
+  </view>
+</view>
+
+<view>
+  <button bindtap="saveMessage"  type="primary" style="margin-top:120rpx;width:80%;">保存信息</button>
+</view>

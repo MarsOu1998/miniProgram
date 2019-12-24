@@ -1,0 +1,32 @@
+<view class="searchArea">
+  <input class="input" placeholder="搜索兼职"           bindinput="input" />
+  <view class="sousuo" bindtap="search">搜索</view>
+</view>
+
+<text class="hot">热门搜索</text>
+
+<view class="wholeHot">
+  <view class="student" bindtap="student"> 
+  <text>学生</text>
+  </view>
+
+  <view class="student" bindtap="jiaqi"> 
+  <text>假期</text>
+  </view>
+
+  <view class="student" bindtap="rijie"> 
+  <text>日结</text>
+  </view>
+</view>
+
+<view class="wholeHot" >
+  <view class="student" bindtap="baojie"> 
+  <text>保洁阿姨</text>
+  </view>
+  <view class="student" bindtap="linshi"> 
+  <text>临时工</text>
+  </view>
+  <view class="student" bindtap="fuwuyuan"> 
+  <text>服务员</text>
+  </view>
+</view>

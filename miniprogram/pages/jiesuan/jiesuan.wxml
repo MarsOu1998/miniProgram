@@ -1,0 +1,38 @@
+<view>
+  <view>
+    您发布的工作：
+  </view>
+ 
+  <view wx:for="{{result}}">
+        <view class="work" bindtap="jump" data-id="{{index}}" >
+    <view>
+      <!-- 工作简介 -->
+      <image src="/images/icon1.png"></image>
+      {{item['title']}}
+    </view>
+    <!-- 工作类型 -->
+    <view class="type">
+      <view class="time">
+        {{item['type']}} | {{item['time']}} | {{item['sex']}}
+      </view>
+      <view class="salary">
+          {{item['salary']}}
+      </view>
+      </view>
+      <!-- 分割线 -->
+      <view class="border"></view>
+  </view>
+  </view>
+  <!-- 如果工作的数量大于5条，在页面上显示下一页 -->
+  <view class="page">
+    <view wx:if="{{lastPage}}" class="lastPage" bindtap="last">  
+      上一页
+    </view>
+    <view wx:if="{{indexPage}}" class="indexPage" bindtap="first">  
+      首页
+    </view>
+    <view wx:if="{{nextPage}}" class="nextPage" bindtap="next">  
+      下一页
+    </view>
+  </view>
+</view>
