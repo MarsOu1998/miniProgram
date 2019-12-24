@@ -105,12 +105,13 @@ Page({
   },
   arrive:function(event){
     var that=this;
+    daogangJob=[];
     var id=event.currentTarget.dataset.id;
     console.log("当前点击页面上的第"+id+"条");
     console.log("当前job的id为:" + job[id]['_id']);
     console.log("当前工作已到岗的人有：");
     console.log(job[id]['daogang']);
-    daogangJob = job[id]['daogang'];
+    //daogangJob = job[id]['daogang'];
     daogangJob.push(app.globalData.accountInfo['_id']);
     wx.cloud.callFunction({
       name:'updateBusInfo',

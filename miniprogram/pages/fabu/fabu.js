@@ -146,9 +146,9 @@ Page({
             fabu:fabu
           }
         })
-        // wx.redirectTo({
-        //   url: '/pages/qiehuan/qiehuan',
-        // })
+        wx.redirectTo({
+          url: '/pages/qiehuan/qiehuan',
+        })
       },
       fail:res=>{
         console.log("工作发布失败");
